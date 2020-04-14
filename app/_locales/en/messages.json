@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "showdown-gsc",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "showdown-gsc",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "Chrome extension that makes Pokemon Showdown PokemonGSC style.",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "showdown-gsc",
+    "description": "The title of the browser action button"
+  }
+}
