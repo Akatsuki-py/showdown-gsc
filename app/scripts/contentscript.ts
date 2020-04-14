@@ -1,3 +1,4 @@
 import { makeAvatarGen2 } from './avatar';
 
-makeAvatarGen2();
+const trainersprite = document.getElementsByClassName('trainersprite');
+makeAvatarGen2(trainersprite);

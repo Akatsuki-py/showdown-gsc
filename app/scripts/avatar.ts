@@ -1,3 +1,5 @@
+import { URLExists } from './util';
+
 const BattleAvatarNumbers: { [ID: number]: string } = {
     1: 'lucas',
     2: 'dawn',
@@ -305,32 +307,13 @@ const getAvatarURL = (style: string): string => {
     }
 };
 
-const URLExists = (URL: string): boolean => {
-    const http = new XMLHttpRequest();
-    http.open('HEAD', URL, false);
-    http.send();
-    return http.status != 404;
-};
-
+// brycenman.png => Does brycenman-gen2.png exists?
 const getGen2 = (URL: string): string => {
     const URLgen2 = URL.replace('.png', '') + '-gen2.png';
-    return URLgen2;
-};
-
-// brycenman.png => Does brycenman-gen2.png exists?
-const gen2IsExist = (URL: string): boolean => {
-    const URLgen2 = getGen2(URL);
-    return URLExists(URLgen2);
-};
-
-// replace avatar style
-const setTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>, styles: string[]) => {
-    if (trainersprite.length == 2) {
-        const trainer = trainersprite[0];
-        const opponent = trainersprite[1];
-        trainer.setAttribute('style', styles[0]);
-        opponent.setAttribute('style', styles[1]);
+    if (URLExists(URLgen2)) {
+        return URLgen2;
     }
+    return URL;
 };
 
 const getTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>): string[] => {
@@ -345,22 +328,34 @@ const getTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>): string
     }
 };
 
+// replace avatar style
+const setTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>, styles: string[]) => {
+    if (trainersprite.length == 2) {
+        const trainer = trainersprite[0];
+        const opponent = trainersprite[1];
+        trainer.setAttribute('style', styles[0]);
+        opponent.setAttribute('style', styles[1]);
+    }
+};
+
 const URLToStyle = (URL: string) => {
     return `background-image:url(${URL});`;
 };
 
-export const makeAvatarGen2 = () => {
-    const trainersprite = document.getElementsByClassName('trainersprite');
-    const [trainerStyle, opponentStyle] = getTrainerspriteStyle(trainersprite);
-
-    let trainerURL = getAvatarURL(trainerStyle);
-    let opponentURL = getAvatarURL(opponentStyle);
-
-    if (gen2IsExist(trainerURL)) {
-        trainerURL = getGen2(trainerURL);
+export const makeAvatarGen2 = (trainersprite: HTMLCollectionOf<Element>) => {
+    const styles = getTrainerspriteStyle(trainersprite);
+    if (styles.length < 2) {
+        return;
     }
-    if (gen2IsExist(opponentURL)) {
-        opponentURL = getGen2(opponentURL);
-    }
-    setTrainerspriteStyle(trainersprite, [URLToStyle(trainerURL), URLToStyle(opponentURL)]);
+    const [trainerStyle, opponentStyle] = styles;
+
+    const trainerURL = getAvatarURL(trainerStyle);
+    const opponentURL = getAvatarURL(opponentStyle);
+
+    const trainerURLGen2 = getGen2(trainerURL);
+    const opponentURLGen2 = getGen2(opponentURL);
+
+    const trainerStyleGen2 = URLToStyle(trainerURLGen2);
+    const opponentStyleGen2 = URLToStyle(opponentURLGen2);
+    setTrainerspriteStyle(trainersprite, [trainerStyleGen2, opponentStyleGen2]);
 };
