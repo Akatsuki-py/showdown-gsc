@@ -1,4 +1,4 @@
-// Enable chromereload by uncommenting this line:
-// import 'chromereload/devonly'
+import { makeAvatarGen2 } from './avatar';
 
-console.log(`'Allo 'Allo! Content script`);
+const trainersprite = document.getElementsByClassName('trainersprite');
+makeAvatarGen2(trainersprite);
