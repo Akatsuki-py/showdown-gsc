@@ -295,35 +295,72 @@ const BattleAvatarNumbers: { [ID: number]: string } = {
     294: 'ash',
 };
 
-export const getTrainerspriteStyle = (): string[] => {
-    const trainersprite = document.getElementsByClassName('trainersprite');
+// background-image: url(https://p…sprites/trainers/brycenman.png); => https://p…sprites/trainers/brycenman.png
+const getAvatarURL = (style: string): string => {
+    const result = style.match(/https:\/\/play.pokemonshowdown.com\/sprites\/trainers\/[a-z.]*/gi);
+    if (result && result.length > 0) {
+        return result[0];
+    } else {
+        return style;
+    }
+};
+
+const URLExists = (URL: string): boolean => {
+    const http = new XMLHttpRequest();
+    http.open('HEAD', URL, false);
+    http.send();
+    return http.status != 404;
+};
+
+const getGen2 = (URL: string): string => {
+    const URLgen2 = URL.replace('.png', '') + '-gen2.png';
+    return URLgen2;
+};
+
+// brycenman.png => Does brycenman-gen2.png exists?
+const gen2IsExist = (URL: string): boolean => {
+    const URLgen2 = getGen2(URL);
+    return URLExists(URLgen2);
+};
+
+// replace avatar style
+const setTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>, styles: string[]) => {
     if (trainersprite.length == 2) {
         const trainer = trainersprite[0];
-        const trainerStyle = trainer.getAttribute('style') || '';
         const opponent = trainersprite[1];
-        const opponentStyle = opponent.getAttribute('style') || '';
+        trainer.setAttribute('style', styles[0]);
+        opponent.setAttribute('style', styles[1]);
+    }
+};
+
+const getTrainerspriteStyle = (trainersprite: HTMLCollectionOf<Element>): string[] => {
+    if (trainersprite.length == 2) {
+        const trainer = trainersprite[0];
+        const trainerStyle = trainer.getAttribute('style')?.replace(' ', '') || '';
+        const opponent = trainersprite[1];
+        const opponentStyle = opponent.getAttribute('style')?.replace('\n\t ', '') || '';
         return [trainerStyle, opponentStyle];
     } else {
         return [];
     }
 };
 
-// background-image: url(https://p…sprites/trainers/brycenman.png); => https://p…sprites/trainers/brycenman.png
-const getAvatarURL = (style: string): string => {
-    return '';
+const URLToStyle = (URL: string) => {
+    return `background-image:url(${URL});`;
 };
 
-// https://p…sprites/trainers/brycenman.png => brycenman.png
-const getAvatarName = (URL: string): string => {
-    return '';
-};
+export const makeAvatarGen2 = () => {
+    const trainersprite = document.getElementsByClassName('trainersprite');
+    const [trainerStyle, opponentStyle] = getTrainerspriteStyle(trainersprite);
 
-// brycenman.png => Does brycenman-gen2.png exists?
-const gen2IsExist = (avatar: string): boolean => {
-    return true;
-};
+    let trainerURL = getAvatarURL(trainerStyle);
+    let opponentURL = getAvatarURL(opponentStyle);
 
-// replace avatar style
-const replaceAvatar = () => {
-    return;
+    if (gen2IsExist(trainerURL)) {
+        trainerURL = getGen2(trainerURL);
+    }
+    if (gen2IsExist(opponentURL)) {
+        opponentURL = getGen2(opponentURL);
+    }
+    setTrainerspriteStyle(trainersprite, [URLToStyle(trainerURL), URLToStyle(opponentURL)]);
 };

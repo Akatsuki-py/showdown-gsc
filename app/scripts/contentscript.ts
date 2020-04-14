@@ -1,4 +1,3 @@
-import { getTrainerspriteStyle } from './avatar';
+import { makeAvatarGen2 } from './avatar';
 
-console.log(`'Allo 'Allo! Content script`);
-console.log(getTrainerspriteStyle());
+makeAvatarGen2();
