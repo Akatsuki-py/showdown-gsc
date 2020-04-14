@@ -1,4 +1,4 @@
-// Enable chromereload by uncommenting this line:
-// import 'chromereload/devonly'
+import { getTrainerspriteStyle } from './avatar';
 
 console.log(`'Allo 'Allo! Content script`);
+console.log(getTrainerspriteStyle());
