@@ -1,0 +1,27 @@
+$fontPath: 'chrome-extension://__MSG_@@extension_id__/fonts/';
+@font-face {
+	font-family: 'Pokemon';
+	src: url(#{$fontPath}pokemon-font.ttf);
+}
+
+.battle {
+    font-size: 65% !important;
+    font-family: Pokemon !important;
+}
+.battle-controls {
+    font-size: 65% !important;
+    font-family: Pokemon !important;
+}
+.trainer strong {
+    font-size: 80% !important;
+    font-family: Pokemon !important;
+}
+.turn {
+    font-size: 110% !important;
+}
+.statbar .hpbar .hptext {
+    font-size: 80% !important;
+}
+.battle-controls .whatdo {
+    font-size: 110% !important;
+}
