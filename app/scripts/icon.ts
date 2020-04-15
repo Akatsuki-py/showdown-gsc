@@ -1,7 +1,9 @@
 import { NameToID } from './util';
 
-const trimActive = (name: string): string => {
-    return name.replace(' (active)', '');
+const trimStatus = (name: string): string => {
+    const result = name.match(/\(.*\)/gi) || [''];
+    const status = result[0];
+    return name.replace(` ${status}`, '');
 };
 
 export const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
@@ -12,7 +14,7 @@ export const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
     if (ariaLabel == 'Not revealed' || ariaLabel == 'Non-statused') {
         style = `background:transparent url(chrome-extension://${extensionID}/images/others/pokeball.png) no-repeat scroll 12px 12px;`;
     } else {
-        const name = trimActive(ariaLabel);
+        const name = trimStatus(ariaLabel);
         const ID = NameToID(name);
         style = `background:transparent url(chrome-extension://${extensionID}/images/minidex/${ID}/0.png) no-repeat scroll 12px 12px;`;
     }
