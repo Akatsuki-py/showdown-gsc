@@ -309,7 +309,7 @@ const getAvatarURL = (style: string): string => {
 
 // brycenman.png => Does brycenman-gen2.png exists?
 const getGen2 = (URL: string): string => {
-    const URLgen2 = URL.replace('.png', '') + '-gen2.png';
+    const URLgen2 = URL.replace('-gen4', '').replace('.png', '') + '-gen2.png';
     if (URLExists(URLgen2)) {
         return URLgen2;
     }
