@@ -35,6 +35,8 @@
   ],
   "web_accessible_resources": [
     "*.png",
-    "*.ttf"
+    "*.ttf",
+    "*.js",
+    "*.mp3"
   ]
 }
