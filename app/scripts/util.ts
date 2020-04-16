@@ -819,3 +819,10 @@ export const NameToID = (name: string): number => {
     ];
     return names.indexOf(name) + 1;
 };
+
+export const injectScript = function(file: string, node: string) {
+    const th = document.getElementsByTagName(node)[0];
+    const s = document.createElement('script');
+    s.setAttribute('src', file);
+    return th.appendChild(s);
+};

@@ -3003,12 +3003,19 @@ var BattleSound = new (_temp = function () {
                             }
                         }
                         try {
-                            sound = soundManager.createSound({
-                                id: url,
-                                url: Dex.resourcePrefix + url,
-                                volume: this.bgmVolume
-                            });
-
+                            if (url.startsWith('audio/')) {
+                                sound = soundManager.createSound({
+                                    id: url,
+                                    url: Dex.resourcePrefix + url,
+                                    volume: this.bgmVolume
+                                });
+                            } else {
+                                sound = soundManager.createSound({
+                                    id: url,
+                                    url: url,
+                                    volume: this.bgmVolume
+                                });
+                            }
                         } catch (_unused2) { }
                         if (!sound) {
 
