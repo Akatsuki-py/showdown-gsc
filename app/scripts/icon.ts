@@ -6,7 +6,25 @@ const trimStatus = (name: string): string => {
     return name.replace(` ${status}`, '');
 };
 
-export const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
+const isDone = (icon: Element): boolean => {
+    if (icon) {
+        const done = icon.getAttribute('done') || '';
+        if (done == 'ok') {
+            return true;
+        }
+        return false;
+    } else {
+        return true;
+    }
+};
+
+const setDone = (icon: Element) => {
+    if (icon) {
+        icon.setAttribute('done', 'ok');
+    }
+};
+
+const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
     const extensionID = chrome.i18n.getMessage('@@extension_id');
     const ariaLabel = icon.getAttribute('aria-label') || '';
     let style = icon.getAttribute('style') || '';
@@ -21,4 +39,34 @@ export const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
     icon.setAttribute('style', style);
 
     return icon;
+};
+
+export const makeIconsGen2 = (teamicons: HTMLCollectionOf<Element>) => {
+    const trainer = teamicons[0];
+    if (!isDone(trainer)) {
+        // 0, 1 => 自分1,2行目
+        [0, 1].forEach((i) => {
+            const row = teamicons[i];
+            const icons = row.getElementsByTagName('span');
+            icons[0] = makeIconGen2(icons[0]);
+            icons[1] = makeIconGen2(icons[1]);
+            icons[2] = makeIconGen2(icons[2]);
+        });
+
+        setDone(trainer);
+    }
+
+    const opponent = teamicons[3];
+    if (!isDone(opponent)) {
+        // 3, 4 => 相手1,2行目
+        [3, 4].forEach((i) => {
+            const row = teamicons[i];
+            const icons = row.getElementsByTagName('span');
+            icons[0] = makeIconGen2(icons[0]);
+            icons[1] = makeIconGen2(icons[1]);
+            icons[2] = makeIconGen2(icons[2]);
+        });
+
+        setDone(opponent);
+    }
 };
