@@ -1,4 +1,6 @@
 $fontPath: 'chrome-extension://__MSG_@@extension_id__/fonts/';
+$imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
+
 @font-face {
 	font-family: 'Pokemon';
 	src: url(#{$fontPath}pokemon-font.ttf);
@@ -24,4 +26,36 @@ $fontPath: 'chrome-extension://__MSG_@@extension_id__/fonts/';
 }
 .battle-controls .whatdo {
     font-size: 110% !important;
+}
+
+.turn {
+    position: absolute;
+    display: block;
+    top: 10px;
+    left: 110px;
+    font-size: 13pt;
+    font-weight: 700;
+    margin: 0;
+    padding: 2px 8px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    color: #000000;
+    background: #ffffff;
+}
+
+.backdrop {
+    display: block;
+    background-image: url(#{$imagePath}others/background.png) !important;
+}
+
+.leftbar {
+    position:absolute;top:0;left:0;height:450px;width:100px;
+    background-color:#ccc;
+    background-color:rgba(0,0,0,.0) !important;
+}
+
+.rightbar {
+    position:absolute;top:0;right:0;height:450px;width:100px;
+    background-color:#ccc;
+    background-color:rgba(0,0,0,.0) !important;
 }

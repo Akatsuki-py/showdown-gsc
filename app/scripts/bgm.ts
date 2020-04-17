@@ -10,7 +10,7 @@ export const injectNewGraphicsJS = () => {
 const loadScript = `
 const changeBGM = setInterval(function() {
     if (BattleSound.bgm.length == 1) {
-        BattleSound.loadBgm('${url}', 0, 10000, BattleSound.bgm[0]);
+        BattleSound.loadBgm('${url}', 0, 100000, BattleSound.bgm[0]);
         clearInterval(changeBGM);
     }
 }, 100);
