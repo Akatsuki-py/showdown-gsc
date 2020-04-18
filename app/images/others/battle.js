@@ -933,6 +933,7 @@
                                                                                                 pokemon.fainted = true;
                                                                                                 pokemon.hp = 0;
 
+                                                                                                BattleSound.playEffect(seDir + 'fainted.mp3');
                                                                                                 this.battle.scene.animFaint(pokemon);
                                                                                                 if (this.battle.faintCallback) this.battle.faintCallback(this.battle, this);
                                                                                             }; _proto2.
