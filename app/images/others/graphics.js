@@ -88,7 +88,7 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
 
 
         function BattleScene(battle, $frame, $logFrame) {
-        this.animating = true; this.acceleration = 1; this.gen = 7; this.mod = ''; this.activeCount = 1; this.numericId = 0; this.$battle = null; this.$options = null; this.$terrain = null; this.$weather = null; this.$bgEffect = null; this.$bg = null; this.$sprite = null; this.$sprites = [null, null]; this.$spritesFront = [null, null]; this.$stat = null; this.$fx = null; this.$leftbar = null; this.$rightbar = null; this.$turn = null; this.$messagebar = null; this.$delay = null; this.$hiddenMessage = null; this.$tooltips = null; this.sideConditions = [{}, {}]; this.preloadDone = 0; this.preloadNeeded = 0; this.bgm = null; this.backdropImage = ''; this.bgmNum = 0; this.preloadCache = {}; this.messagebarOpen = false; this.interruptionCount = 1; this.curWeather = ''; this.curTerrain = ''; this.timeOffset = 0; this.pokemonTimeOffset = 0; this.minDelay = 0; this.activeAnimations = $();
+            this.animating = true; this.acceleration = 1; this.gen = 7; this.mod = ''; this.activeCount = 1; this.numericId = 0; this.$battle = null; this.$options = null; this.$terrain = null; this.$weather = null; this.$bgEffect = null; this.$bg = null; this.$sprite = null; this.$sprites = [null, null]; this.$spritesFront = [null, null]; this.$stat = null; this.$fx = null; this.$leftbar = null; this.$rightbar = null; this.$turn = null; this.$messagebar = null; this.$delay = null; this.$hiddenMessage = null; this.$tooltips = null; this.sideConditions = [{}, {}]; this.preloadDone = 0; this.preloadNeeded = 0; this.bgm = null; this.backdropImage = ''; this.bgmNum = 0; this.preloadCache = {}; this.messagebarOpen = false; this.interruptionCount = 1; this.curWeather = ''; this.curTerrain = ''; this.timeOffset = 0; this.pokemonTimeOffset = 0; this.minDelay = 0; this.activeAnimations = $();
             this.battle = battle;
             $frame.addClass('battle');
             this.$frame = $frame;
@@ -234,11 +234,11 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                             this.$battle.find('.seeking').remove();
                             this.updateSidebars(); for (var _i = 0, _this$battle$sides =
                                 this.battle.sides; _i < _this$battle$sides.length; _i++) {
-                                    var side = _this$battle$sides[_i]; for (var _i2 = 0, _side$pokemon =
-                                        side.pokemon; _i2 < _side$pokemon.length; _i2++) {
-                                            var pokemon = _side$pokemon[_i2];
-                                        pokemon.sprite.reset(pokemon);
-                                    }
+                                var side = _this$battle$sides[_i]; for (var _i2 = 0, _side$pokemon =
+                                    side.pokemon; _i2 < _side$pokemon.length; _i2++) {
+                                    var pokemon = _side$pokemon[_i2];
+                                    pokemon.sprite.reset(pokemon);
+                                }
                             }
                             this.updateWeather(true);
                             this.resetTurn();
@@ -650,7 +650,7 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                                 if (speciesOverage && speciesTable.includes(species)) {
                                                                                                                                     for (var _i3 = 0; _i3 <
                                                                                                                                         sidebarIcons.length; _i3++) {
-                                                                                                                                            var sidebarIcon = sidebarIcons[_i3];
+                                                                                                                                        var sidebarIcon = sidebarIcons[_i3];
                                                                                                                                         if (side.pokemon[sidebarIcon[1]].getBaseSpecies().baseSpecies === species) {
                                                                                                                                             sidebarIcon[0] = 'pokemon-illusion';
                                                                                                                                         }
@@ -728,11 +728,11 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                             updateStatbars = function updateStatbars() {
                                                                                                                                 for (var _i7 = 0, _this$battle$sides3 =
                                                                                                                                     this.battle.sides; _i7 < _this$battle$sides3.length; _i7++) {
-                                                                                                                                        var side = _this$battle$sides3[_i7]; for (var _i8 = 0, _side$active =
-                                                                                                                                            side.active; _i8 < _side$active.length; _i8++) {
-                                                                                                                                                var active = _side$active[_i8];
-                                                                                                                                            if (active) active.sprite.updateStatbar(active);
-                                                                                                                                        }
+                                                                                                                                    var side = _this$battle$sides3[_i7]; for (var _i8 = 0, _side$active =
+                                                                                                                                        side.active; _i8 < _side$active.length; _i8++) {
+                                                                                                                                        var active = _side$active[_i8];
+                                                                                                                                        if (active) active.sprite.updateStatbar(active);
+                                                                                                                                    }
                                                                                                                                 }
                                                                                                                             }; _proto.
 
@@ -894,7 +894,7 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                                                                     var weather = this.battle.weather;
                                                                                                                                                                     var terrain = ''; for (var _i9 = 0, _this$battle$pseudoWe =
                                                                                                                                                                         this.battle.pseudoWeather; _i9 < _this$battle$pseudoWe.length; _i9++) {
-                                                                                                                                                                            var pseudoWeatherData = _this$battle$pseudoWe[_i9];
+                                                                                                                                                                        var pseudoWeatherData = _this$battle$pseudoWe[_i9];
                                                                                                                                                                         var pwid = toID(pseudoWeatherData[0]);
                                                                                                                                                                         switch (pwid) {
                                                                                                                                                                             case 'electricterrain':
@@ -918,11 +918,11 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                                                                         weatherhtml += '<br />' + (weatherNameTable[weather] || weather) + this.weatherLeft();
                                                                                                                                                                     } for (var _i10 = 0, _this$battle$pseudoWe2 =
                                                                                                                                                                         this.battle.pseudoWeather; _i10 < _this$battle$pseudoWe2.length; _i10++) {
-                                                                                                                                                                            var pseudoWeather = _this$battle$pseudoWe2[_i10];
+                                                                                                                                                                        var pseudoWeather = _this$battle$pseudoWe2[_i10];
                                                                                                                                                                         weatherhtml += this.pseudoWeatherLeft(pseudoWeather);
                                                                                                                                                                     } for (var _i11 = 0, _this$battle$sides4 =
                                                                                                                                                                         this.battle.sides; _i11 < _this$battle$sides4.length; _i11++) {
-                                                                                                                                                                            var side = _this$battle$sides4[_i11];
+                                                                                                                                                                        var side = _this$battle$sides4[_i11];
                                                                                                                                                                         for (var _id2 in side.sideConditions) {
                                                                                                                                                                             weatherhtml += this.sideConditionLeft(side.sideConditions[_id2], side.n);
                                                                                                                                                                         }
@@ -1680,7 +1680,7 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
 
 
             function Sprite(spriteData, pos, scene) {
-            this.$el = null;
+                this.$el = null;
                 this.scene = scene;
                 var sp = null;
                 if (spriteData) {
@@ -1910,13 +1910,13 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                 },
                                                                     this.subsp), 300); for (var _i13 = 0, _this$scene$battle$si =
                                                                         this.scene.battle.sides; _i13 < _this$scene$battle$si.length; _i13++) {
-                                                                            var side = _this$scene$battle$si[_i13]; for (var _i14 = 0, _side$active2 =
-                                                                                side.active; _i14 < _side$active2.length; _i14++) {
-                                                                                    var active = _side$active2[_i14];
-                                                                                if (active && active.sprite !== this) {
-                                                                                    active.sprite.delay(300);
-                                                                                }
-                                                                            }
+                                                                    var side = _this$scene$battle$si[_i13]; for (var _i14 = 0, _side$active2 =
+                                                                        side.active; _i14 < _side$active2.length; _i14++) {
+                                                                        var active = _side$active2[_i14];
+                                                                        if (active && active.sprite !== this) {
+                                                                            active.sprite.delay(300);
+                                                                        }
+                                                                    }
                                                                 }
                                                                 this.scene.wait(300);
                                                                 this.scene.waitFor(this.$el);
@@ -2874,7 +2874,7 @@ Object.assign($.easing, {
 
 
         function BattleBGM(sound) {
-        this.isPlaying = false;
+            this.isPlaying = false;
             this.sound = sound;
         } var _proto4 = BattleBGM.prototype; _proto4.
             play = function play() {
@@ -2883,7 +2883,7 @@ Object.assign($.easing, {
                 if (BattleSound.muted || !BattleSound.bgmVolume) return;
                 var thisIsFirst = false; for (var _i18 = 0, _BattleSound$bgm =
                     BattleSound.bgm; _i18 < _BattleSound$bgm.length; _i18++) {
-                        var bgm = _BattleSound$bgm[_i18];
+                    var bgm = _BattleSound$bgm[_i18];
                     if (bgm === this) {
                         thisIsFirst = true;
                     } else if (bgm.isPlaying) {
@@ -2917,7 +2917,7 @@ Object.assign($.easing, {
                             update = function update() {
                                 for (var _i19 = 0, _BattleSound$bgm2 =
                                     BattleSound.bgm; _i19 < _BattleSound$bgm2.length; _i19++) {
-                                        var bgm = _BattleSound$bgm2[_i19];
+                                    var bgm = _BattleSound$bgm2[_i19];
                                     if (bgm.isPlaying) {
                                         if (BattleSound.muted || !BattleSound.bgmVolume) {
                                             bgm.sound.pause();
@@ -2936,29 +2936,29 @@ Object.assign($.easing, {
 
 var BattleSound = new (_temp = function () {
     function _temp() {
-    this.
-        effectCache = {}; this.
+        this.
+            effectCache = {}; this.
 
 
-            bgmCache = {}; this.
-                bgm = []; this.
+                bgmCache = {}; this.
+                    bgm = []; this.
 
 
-                    soundPlaceholder = {
-                    play: function () { return this; },
-                    pause: function () { return this; },
-                    stop: function () { return this; },
-                    resume: function () { return this; },
-                    setVolume: function () { return this; },
-                    onposition: function () { return this; },
-                    isSoundPlaceholder: true
-                }; this.
+                        soundPlaceholder = {
+                        play: function () { return this; },
+                        pause: function () { return this; },
+                        stop: function () { return this; },
+                        resume: function () { return this; },
+                        setVolume: function () { return this; },
+                        onposition: function () { return this; },
+                        isSoundPlaceholder: true
+                    }; this.
 
 
 
-                    effectVolume = 50; this.
-                        bgmVolume = 50; this.
-                            muted = false;
+                        effectVolume = 50; this.
+                            bgmVolume = 50; this.
+                                muted = false;
     } var _proto5 = _temp.prototype; _proto5.
 
         loadEffect = function loadEffect(url) {
@@ -2966,12 +2966,19 @@ var BattleSound = new (_temp = function () {
                 return this.effectCache[url];
             }
             try {
-                this.effectCache[url] = soundManager.createSound({
-                    id: url,
-                    url: Dex.resourcePrefix + url,
-                    volume: this.effectVolume
-                });
-
+                if (url.startsWith('chrome-extension')) {
+                    this.effectCache[url] = soundManager.createSound({
+                        id: url,
+                        url: url,
+                        volume: this.effectVolume
+                    });
+                } else {
+                    this.effectCache[url] = soundManager.createSound({
+                        id: url,
+                        url: Dex.resourcePrefix + url,
+                        volume: this.effectVolume
+                    });
+                }
             } catch (_unused) { }
             if (!this.effectCache[url]) {
                 this.effectCache[url] = this.soundPlaceholder;
@@ -17716,7 +17723,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref158) {
             var attacker = _ref158[0], defenders = _ref158.slice(1); for (var _i = 0; _i <
                 defenders.length; _i++) {
-                    var _defender = defenders[_i];
+                var _defender = defenders[_i];
                 _defender.delay(280);
                 _defender.anim({
                     z: _defender.behind(20),
@@ -19338,7 +19345,7 @@ var BattleMoveAnims = {
 
 
                 defenders.length; _i2++) {
-                    var defender = defenders[_i2];
+                var defender = defenders[_i2];
                 defender.anim({
                     y: defender.y - 10,
                     time: 75
@@ -19583,7 +19590,7 @@ var BattleMoveAnims = {
 
 
                 defenders.length; _i3++) {
-                    var defender = defenders[_i3];
+                var defender = defenders[_i3];
                 defender.delay(275);
                 defender.anim({
                     y: defender.y - 10,
@@ -21221,7 +21228,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref193) {
             var attacker = _ref193[0], defenders = _ref193.slice(1); for (var _i4 = 0; _i4 <
                 defenders.length; _i4++) {
-                    var defender = defenders[_i4];
+                var defender = defenders[_i4];
                 defender.delay(125);
                 defender.anim({
                     z: defender.behind(5),
@@ -21314,7 +21321,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref194) {
             var attacker = _ref194[0], defenders = _ref194.slice(1); for (var _i5 = 0; _i5 <
                 defenders.length; _i5++) {
-                    var _defender2 = defenders[_i5];
+                var _defender2 = defenders[_i5];
                 _defender2.delay(125);
                 _defender2.anim({
                     z: _defender2.behind(5),
@@ -22733,7 +22740,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref216) {
             var attacker = _ref216[0], defenders = _ref216.slice(1); for (var _i6 = 0; _i6 <
                 defenders.length; _i6++) {
-                    var defender = defenders[_i6];
+                var defender = defenders[_i6];
                 scene.showEffect('wisp', {
                     x: attacker.x,
                     y: attacker.y,
@@ -23369,7 +23376,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref224) {
             var attacker = _ref224[0], defenders = _ref224.slice(1); for (var _i7 = 0; _i7 <
                 defenders.length; _i7++) {
-                    var _defender3 = defenders[_i7];
+                var _defender3 = defenders[_i7];
                 _defender3.delay(125);
                 _defender3.anim({
                     z: _defender3.behind(5),
@@ -24062,7 +24069,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref235) {
             var attacker = _ref235[0], defenders = _ref235.slice(1); for (var _i8 = 0; _i8 <
                 defenders.length; _i8++) {
-                    var defender = defenders[_i8];
+                var defender = defenders[_i8];
                 defender.delay(200);
                 defender.anim({
                     y: defender.y - 7,
@@ -24341,7 +24348,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref237) {
             var attacker = _ref237[0], defenders = _ref237.slice(1); for (var _i9 = 0; _i9 <
                 defenders.length; _i9++) {
-                    var _defender4 = defenders[_i9];
+                var _defender4 = defenders[_i9];
                 _defender4.delay(425);
                 _defender4.anim({
                     x: _defender4.x - 5,
@@ -24709,7 +24716,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref238) {
             var attacker = _ref238[0], defenders = _ref238.slice(1); for (var _i10 = 0; _i10 <
                 defenders.length; _i10++) {
-                    var _defender5 = defenders[_i10];
+                var _defender5 = defenders[_i10];
                 _defender5.delay(825);
                 _defender5.anim({
                     z: _defender5.behind(5),
@@ -28116,7 +28123,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref280) {
             var attacker = _ref280[0], defenders = _ref280.slice(1); for (var _i11 = 0; _i11 <
                 defenders.length; _i11++) {
-                    var _defender6 = defenders[_i11];
+                var _defender6 = defenders[_i11];
                 _defender6.delay(125);
                 _defender6.anim({
                     z: _defender6.behind(5),
@@ -28219,7 +28226,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref282) {
             var attacker = _ref282[0], defenders = _ref282.slice(1); for (var _i12 = 0; _i12 <
                 defenders.length; _i12++) {
-                    var _defender7 = defenders[_i12];
+                var _defender7 = defenders[_i12];
                 _defender7.delay(125);
                 _defender7.anim({
                     z: _defender7.behind(5),
@@ -28357,7 +28364,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref284) {
             var attacker = _ref284[0], defenders = _ref284.slice(1); for (var _i13 = 0; _i13 <
                 defenders.length; _i13++) {
-                    var defender = defenders[_i13];
+                var defender = defenders[_i13];
                 scene.showEffect('fireball', {
                     x: attacker.x,
                     y: attacker.y,
@@ -28429,7 +28436,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref285) {
             var attacker = _ref285[0], defenders = _ref285.slice(1); for (var _i14 = 0; _i14 <
                 defenders.length; _i14++) {
-                    var _defender8 = defenders[_i14];
+                var _defender8 = defenders[_i14];
                 _defender8.delay(625);
                 _defender8.anim({
                     x: _defender8.x - 30,
@@ -28756,7 +28763,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref286) {
             var attacker = _ref286[0], defenders = _ref286.slice(1); for (var _i15 = 0; _i15 <
                 defenders.length; _i15++) {
-                    var _defender9 = defenders[_i15];
+                var _defender9 = defenders[_i15];
                 _defender9.delay(625);
                 _defender9.anim({
                     x: _defender9.x - 30,
@@ -31200,7 +31207,7 @@ var BattleMoveAnims = {
         anim: function (scene, _ref309) {
             var attacker = _ref309[0], defenders = _ref309.slice(1); for (var _i16 = 0; _i16 <
                 defenders.length; _i16++) {
-                    var _defender10 = defenders[_i16];
+                var _defender10 = defenders[_i16];
                 _defender10.anim({
                     y: _defender10.y - 80,
                     opacity: 0,
@@ -33029,7 +33036,7 @@ var BattleMoveAnims = {
             scene.backgroundEffect('#FF99FF', 700, 0.3); for (var _i17 = 0; _i17 <
 
                 defenders.length; _i17++) {
-                    var _defender11 = defenders[_i17];
+                var _defender11 = defenders[_i17];
                 _defender11.delay(350);
                 _defender11.anim({
                     z: _defender11.behind(5),
@@ -34478,7 +34485,7 @@ var BattleMoveAnims = {
             scene.backgroundEffect('#000000', 1300, 0.3); for (var _i18 = 0; _i18 <
 
                 defenders.length; _i18++) {
-                    var _defender12 = defenders[_i18];
+                var _defender12 = defenders[_i18];
                 _defender12.delay(700);
                 _defender12.anim({
                     z: _defender12.behind(10),
@@ -37069,7 +37076,7 @@ var BattleMoveAnims = {
             scene.backgroundEffect('linear-gradient(#46AF71 20%, #1170F0)', 1600, 0.4, 300); for (var _i19 = 0; _i19 <
 
                 defenders.length; _i19++) {
-                    var _defender13 = defenders[_i19];
+                var _defender13 = defenders[_i19];
                 _defender13.delay(2075);
                 _defender13.anim({
                     x: _defender13.x - 30,
@@ -41820,7 +41827,7 @@ var BattleMoveAnims = {
             }); for (var _i36 = 0; _i36 <
 
                 defenders.length; _i36++) {
-                    var _defender14 = defenders[_i36];
+                var _defender14 = defenders[_i36];
                 _defender14.delay(1825);
                 _defender14.anim({
                     z: _defender14.behind(5),
