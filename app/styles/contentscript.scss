@@ -9,6 +9,7 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 .battle {
     font-size: 65% !important;
     font-family: Pokemon !important;
+    background-color: #ffffff !important;
 }
 
 .battle-controls {
@@ -22,7 +23,7 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 }
 
 .turn {
-    font-size: 110% !important;
+    font-size: 170% !important;
 }
 
 .battle-controls .whatdo {
@@ -47,6 +48,7 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 .backdrop {
     display: block;
     background-image: url(#{$imagePath}others/background.png) !important;
+    opacity: 1.0 !important;
 }
 
 .leftbar {
