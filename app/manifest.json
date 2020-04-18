@@ -17,11 +17,21 @@
     "default_title": "__MSG_browserActionTitle__",
     "default_popup": "pages/popup.html"
   },
+  "permissions": [
+    "https://*.pokemonshowdown.com/",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ],
+    "persistent": true
+  },
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "https://*.pokemonshowdown.com/*"
       ],
       "css": [
         "styles/contentscript.css"

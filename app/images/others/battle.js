@@ -1597,6 +1597,7 @@
                                                                                                                                         }
 
                                                                                                                                     } else {
+                                                                                                                                        BattleSound.playEffect(seDir + 'hit.mp3');
                                                                                                                                         var damageinfo = '' + Pokemon.getFormattedRange(range, damage[1] === 100 ? 0 : 1, "\u2013");
                                                                                                                                         if (damage[1] !== 100) {
                                                                                                                                             var hover = '' + (damage[0] < 0 ? "\u2212" : '') +
@@ -1845,7 +1846,7 @@
                                                                                                                                 }
                                                                                                                                 case '-supereffective': {
                                                                                                                                     var _poke12 = this.getPokemon(args[1]);
-                                                                                                                                    BattleSound.playEffect(seDir + 'hit.mp3');
+                                                                                                                                    BattleSound.playEffect(seDir + 'super_effective.mp3');
                                                                                                                                     if (_poke12) {
                                                                                                                                         var _window$Config, _window$Config$server;
                                                                                                                                         this.scene.resultAnim(_poke12, 'Super-effective', 'bad');
@@ -1859,6 +1860,7 @@
                                                                                                                                 }
                                                                                                                                 case '-resisted': {
                                                                                                                                     var _poke13 = this.getPokemon(args[1]);
+                                                                                                                                    BattleSound.playEffect(seDir + 'not_very_effective.mp3');
                                                                                                                                     if (_poke13) this.scene.resultAnim(_poke13, 'Resisted', 'neutral');
                                                                                                                                     if (this.activeMoveIsSpread) kwArgs.spread = '.';
                                                                                                                                     this.log(args, kwArgs);

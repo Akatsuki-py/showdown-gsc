@@ -1,7 +1,7 @@
 import { makeAvatarGen2 } from './trainer';
 import { makeIconsGen2 } from './icon';
 import { injectNewGraphicsJS, injectLoadScript } from './bgm';
-import { injectNewBattleJS, injectSEDir } from './se';
+import { injectSEDir } from './se';
 
 // const extensionID = chrome.i18n.getMessage('@@extension_id');
 
@@ -21,4 +21,3 @@ injectLoadScript();
 
 // SE
 injectSEDir();
-injectNewBattleJS();
