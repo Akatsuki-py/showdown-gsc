@@ -30,7 +30,7 @@ const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
     let style = icon.getAttribute('style') || '';
 
     if (ariaLabel == 'Not revealed' || ariaLabel == 'Non-statused') {
-        style = `background:transparent url(chrome-extension://${extensionID}/images/others/pokeball.png) no-repeat scroll 12px 12px;`;
+        style = `background:transparent url(https://play.pokemonshowdown.com/sprites/pokemonicons-pokeball-sheet.png) no-repeat scroll 12px 12px;`;
     } else {
         const name = trimStatus(ariaLabel);
         const ID = NameToID(name);
