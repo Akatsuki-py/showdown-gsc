@@ -1,7 +1,6 @@
 import { makeAvatarGen2 } from './trainer';
 import { makeIconsGen2 } from './icon';
-import { injectNewGraphicsJS, injectLoadScript } from './bgm';
-import { injectSEDir } from './se';
+import { injectSEDir, injectMusicDir } from './inject';
 
 // const extensionID = chrome.i18n.getMessage('@@extension_id');
 
@@ -15,9 +14,6 @@ const interval = setInterval(function() {
     makeIconsGen2(teamicons);
 }, 100);
 
-// BGM
-injectNewGraphicsJS();
-injectLoadScript();
-
 // SE
 injectSEDir();
+injectMusicDir();
