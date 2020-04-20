@@ -35,6 +35,14 @@ const move = [
     'https://play.pokemonshowdown.com/fx/rightslash.png',
     'https://play.pokemonshowdown.com/fx/sword.png',
     'https://play.pokemonshowdown.com/fx/hiddenpower.png',
+    'https://play.pokemonshowdown.com/fx/flareball.png',
+    'https://play.pokemonshowdown.com/fx/pointer.png',
+    'https://play.pokemonshowdown.com/fx/angry.png',
+    'https://play.pokemonshowdown.com/fx/hitmarker.png',
+    'https://play.pokemonshowdown.com/fx/leftslash.png',
+    'https://play.pokemonshowdown.com/fx/fist.png',
+    'https://play.pokemonshowdown.com/fx/fist1.png',
+    'https://play.pokemonshowdown.com/fx/foot.png',
 ];
 
 const redirectMove = (URL: string): Redirect => {
@@ -140,6 +148,38 @@ const redirectMove = (URL: string): Redirect => {
         case move[24]:
             return {
                 redirectUrl: movePath + `hiddenpower.png`,
+            };
+        case move[25]:
+            return {
+                redirectUrl: movePath + `flareball.png`,
+            };
+        case move[26]:
+            return {
+                redirectUrl: movePath + `pointer.png`,
+            };
+        case move[27]:
+            return {
+                redirectUrl: movePath + `angry.png`,
+            };
+        case move[28]:
+            return {
+                redirectUrl: movePath + `hitmarker.png`,
+            };
+        case move[29]:
+            return {
+                redirectUrl: movePath + `leftslash.png`,
+            };
+        case move[30]:
+            return {
+                redirectUrl: movePath + `fist.png`,
+            };
+        case move[31]:
+            return {
+                redirectUrl: movePath + `fist1.png`,
+            };
+        case move[32]:
+            return {
+                redirectUrl: movePath + `foot.png`,
             };
         default:
             return {
