@@ -29,6 +29,11 @@ const move = [
     'https://play.pokemonshowdown.com/fx/petal.png',
     'https://play.pokemonshowdown.com/fx/leaf1.png',
     'https://play.pokemonshowdown.com/fx/leaf2.png',
+    'https://play.pokemonshowdown.com/fx/poisoncaltrop.png',
+    'https://play.pokemonshowdown.com/fx/shine.png',
+    'https://play.pokemonshowdown.com/fx/impact.png',
+    'https://play.pokemonshowdown.com/fx/rightslash.png',
+    'https://play.pokemonshowdown.com/fx/sword.png',
 ];
 
 const redirectMove = (URL: string): Redirect => {
@@ -110,6 +115,26 @@ const redirectMove = (URL: string): Redirect => {
         case move[18]:
             return {
                 redirectUrl: movePath + `leaf.png`,
+            };
+        case move[19]:
+            return {
+                redirectUrl: movePath + `poisoncaltrop.png`,
+            };
+        case move[20]:
+            return {
+                redirectUrl: movePath + `shine.png`,
+            };
+        case move[21]:
+            return {
+                redirectUrl: movePath + `impact.png`,
+            };
+        case move[22]:
+            return {
+                redirectUrl: movePath + `rightslash.png`,
+            };
+        case move[23]:
+            return {
+                redirectUrl: movePath + `sword.png`,
             };
         default:
             return {
