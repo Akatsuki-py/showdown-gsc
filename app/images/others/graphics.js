@@ -1552,7 +1552,6 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                                                                                                                                                                                                                 this.bgmNum = bgmNum;
 
                                                                                                                                                                                                                                                                                                                 var ext = window.nodewebkit ? '.ogg' : '.mp3';
-                                                                                                                                                                                                                                                                                                                console.log("bgmNum: ", bgmNum);
                                                                                                                                                                                                                                                                                                                 switch (bgmNum) {
                                                                                                                                                                                                                                                                                                                     case 0:
                                                                                                                                                                                                                                                                                                                         this.bgm = BattleSound.loadBgm(musicDir + 'trainer.mp3', 0, 100000, this.bgm);
@@ -3151,6 +3150,11 @@ var BattleEffects = {
     electroball: {
         url: 'electroball.png',
         w: 100, h: 100
+    },
+
+    hiddenpower: {
+        url: 'hiddenpower.png',
+        w: 16, h: 16
     },
 
     mistball: {
@@ -12005,7 +12009,7 @@ var BattleMoveAnims = {
             var yf2 = [0, 1, 0, -1];
 
             for (var i = 0; i < 4; i++) {
-                scene.showEffect('electroball', {
+                scene.showEffect('hiddenpower', {
                     x: attacker.x,
                     y: attacker.y,
                     z: attacker.z,
@@ -12021,7 +12025,7 @@ var BattleMoveAnims = {
                         time: 800
                     },
                     'accel', 'fade');
-                scene.showEffect('electroball', {
+                scene.showEffect('hiddenpower', {
                     x: attacker.x,
                     y: attacker.y,
                     z: attacker.z,
