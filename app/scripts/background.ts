@@ -16,6 +16,19 @@ const move = [
     'https://play.pokemonshowdown.com/fx/rock1.png',
     'https://play.pokemonshowdown.com/fx/rock2.png',
     'https://play.pokemonshowdown.com/fx/rock3.png',
+    'https://play.pokemonshowdown.com/fx/energyball.png',
+    'https://play.pokemonshowdown.com/fx/electroball.png',
+    'https://play.pokemonshowdown.com/fx/lightning.png',
+    'https://play.pokemonshowdown.com/fx/icicle.png',
+    'https://play.pokemonshowdown.com/fx/bottombite.png',
+    'https://play.pokemonshowdown.com/fx/topbite.png',
+    'https://play.pokemonshowdown.com/fx/caltrop.png',
+    'https://play.pokemonshowdown.com/fx/heart.png',
+    'https://play.pokemonshowdown.com/fx/shadowball.png',
+    'https://play.pokemonshowdown.com/fx/web.png',
+    'https://play.pokemonshowdown.com/fx/petal.png',
+    'https://play.pokemonshowdown.com/fx/leaf1.png',
+    'https://play.pokemonshowdown.com/fx/leaf2.png',
 ];
 
 const redirectMove = (URL: string): Redirect => {
@@ -45,6 +58,58 @@ const redirectMove = (URL: string): Redirect => {
         case move[5]:
             return {
                 redirectUrl: movePath + `rock.png`,
+            };
+        case move[6]:
+            return {
+                redirectUrl: movePath + `energyball.png`,
+            };
+        case move[7]:
+            return {
+                redirectUrl: movePath + `electroball.png`,
+            };
+        case move[8]:
+            return {
+                redirectUrl: movePath + `lightning.png`,
+            };
+        case move[9]:
+            return {
+                redirectUrl: movePath + `icicle.png`,
+            };
+        case move[10]:
+            return {
+                redirectUrl: movePath + `bottombite.png`,
+            };
+        case move[11]:
+            return {
+                redirectUrl: movePath + `topbite.png`,
+            };
+        case move[12]:
+            return {
+                redirectUrl: movePath + `caltrop.png`,
+            };
+        case move[13]:
+            return {
+                redirectUrl: movePath + `heart.png`,
+            };
+        case move[14]:
+            return {
+                redirectUrl: movePath + `shadowball.png`,
+            };
+        case move[15]:
+            return {
+                redirectUrl: movePath + `web.png`,
+            };
+        case move[16]:
+            return {
+                redirectUrl: movePath + `petal.png`,
+            };
+        case move[17]:
+            return {
+                redirectUrl: movePath + `leaf.png`,
+            };
+        case move[18]:
+            return {
+                redirectUrl: movePath + `leaf.png`,
             };
         default:
             return {
