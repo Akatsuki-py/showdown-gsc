@@ -34,6 +34,7 @@ const move = [
     'https://play.pokemonshowdown.com/fx/impact.png',
     'https://play.pokemonshowdown.com/fx/rightslash.png',
     'https://play.pokemonshowdown.com/fx/sword.png',
+    'https://play.pokemonshowdown.com/fx/hiddenpower.png',
 ];
 
 const redirectMove = (URL: string): Redirect => {
@@ -135,6 +136,10 @@ const redirectMove = (URL: string): Redirect => {
         case move[23]:
             return {
                 redirectUrl: movePath + `sword.png`,
+            };
+        case move[24]:
+            return {
+                redirectUrl: movePath + `hiddenpower.png`,
             };
         default:
             return {

@@ -3152,6 +3152,11 @@ var BattleEffects = {
         w: 100, h: 100
     },
 
+    hiddenpower: {
+        url: 'hiddenpower.png',
+        w: 16, h: 16
+    },
+
     mistball: {
         url: 'mistball.png',
         w: 100, h: 100
@@ -12004,7 +12009,7 @@ var BattleMoveAnims = {
             var yf2 = [0, 1, 0, -1];
 
             for (var i = 0; i < 4; i++) {
-                scene.showEffect('electroball', {
+                scene.showEffect('hiddenpower', {
                     x: attacker.x,
                     y: attacker.y,
                     z: attacker.z,
@@ -12020,7 +12025,7 @@ var BattleMoveAnims = {
                         time: 800
                     },
                     'accel', 'fade');
-                scene.showEffect('electroball', {
+                scene.showEffect('hiddenpower', {
                     x: attacker.x,
                     y: attacker.y,
                     z: attacker.z,
