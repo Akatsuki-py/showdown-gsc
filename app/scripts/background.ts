@@ -9,7 +9,7 @@ const pokeball = [
     'https://play.pokemonshowdown.com/sprites/pokemonicons-pokeball-sheet.png',
 ];
 
-const move = [
+const moves = [
     'https://play.pokemonshowdown.com/fx/waterwisp.png',
     'https://play.pokemonshowdown.com/fx/fireball.png',
     'https://play.pokemonshowdown.com/fx/poisonwisp.png',
@@ -45,139 +45,141 @@ const move = [
     'https://play.pokemonshowdown.com/fx/foot.png',
 ];
 
+const trainers = [];
+
 const redirectMove = (URL: string): Redirect => {
     const movePath = `chrome-extension://${extensionID}/images/move/`;
 
     switch (URL) {
-        case move[0]:
+        case moves[0]:
             return {
                 redirectUrl: movePath + `waterwisp.png`,
             };
-        case move[1]:
+        case moves[1]:
             return {
                 redirectUrl: movePath + `fireball.png`,
             };
-        case move[2]:
+        case moves[2]:
             return {
                 redirectUrl: movePath + `poisonwisp.png`,
             };
-        case move[3]:
+        case moves[3]:
             return {
                 redirectUrl: movePath + `rock.png`,
             };
-        case move[4]:
+        case moves[4]:
             return {
                 redirectUrl: movePath + `rock.png`,
             };
-        case move[5]:
+        case moves[5]:
             return {
                 redirectUrl: movePath + `rock.png`,
             };
-        case move[6]:
+        case moves[6]:
             return {
                 redirectUrl: movePath + `energyball.png`,
             };
-        case move[7]:
+        case moves[7]:
             return {
                 redirectUrl: movePath + `electroball.png`,
             };
-        case move[8]:
+        case moves[8]:
             return {
                 redirectUrl: movePath + `lightning.png`,
             };
-        case move[9]:
+        case moves[9]:
             return {
                 redirectUrl: movePath + `icicle.png`,
             };
-        case move[10]:
+        case moves[10]:
             return {
                 redirectUrl: movePath + `bottombite.png`,
             };
-        case move[11]:
+        case moves[11]:
             return {
                 redirectUrl: movePath + `topbite.png`,
             };
-        case move[12]:
+        case moves[12]:
             return {
                 redirectUrl: movePath + `caltrop.png`,
             };
-        case move[13]:
+        case moves[13]:
             return {
                 redirectUrl: movePath + `heart.png`,
             };
-        case move[14]:
+        case moves[14]:
             return {
                 redirectUrl: movePath + `shadowball.png`,
             };
-        case move[15]:
+        case moves[15]:
             return {
                 redirectUrl: movePath + `web.png`,
             };
-        case move[16]:
+        case moves[16]:
             return {
                 redirectUrl: movePath + `petal.png`,
             };
-        case move[17]:
+        case moves[17]:
             return {
                 redirectUrl: movePath + `leaf.png`,
             };
-        case move[18]:
+        case moves[18]:
             return {
                 redirectUrl: movePath + `leaf.png`,
             };
-        case move[19]:
+        case moves[19]:
             return {
                 redirectUrl: movePath + `poisoncaltrop.png`,
             };
-        case move[20]:
+        case moves[20]:
             return {
                 redirectUrl: movePath + `shine.png`,
             };
-        case move[21]:
+        case moves[21]:
             return {
                 redirectUrl: movePath + `impact.png`,
             };
-        case move[22]:
+        case moves[22]:
             return {
                 redirectUrl: movePath + `rightslash.png`,
             };
-        case move[23]:
+        case moves[23]:
             return {
                 redirectUrl: movePath + `sword.png`,
             };
-        case move[24]:
+        case moves[24]:
             return {
                 redirectUrl: movePath + `hiddenpower.png`,
             };
-        case move[25]:
+        case moves[25]:
             return {
                 redirectUrl: movePath + `flareball.png`,
             };
-        case move[26]:
+        case moves[26]:
             return {
                 redirectUrl: movePath + `pointer.png`,
             };
-        case move[27]:
+        case moves[27]:
             return {
                 redirectUrl: movePath + `angry.png`,
             };
-        case move[28]:
+        case moves[28]:
             return {
                 redirectUrl: movePath + `hitmarker.png`,
             };
-        case move[29]:
+        case moves[29]:
             return {
                 redirectUrl: movePath + `leftslash.png`,
             };
-        case move[30]:
+        case moves[30]:
             return {
                 redirectUrl: movePath + `fist.png`,
             };
-        case move[31]:
+        case moves[31]:
             return {
                 redirectUrl: movePath + `fist1.png`,
             };
-        case move[32]:
+        case moves[32]:
             return {
                 redirectUrl: movePath + `foot.png`,
             };
@@ -212,7 +214,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             'https://*.pokemonshowdown.com/js/battle.js?*',
             'https://*.pokemonshowdown.com/data/graphics.js?*',
             ...pokeball,
-            ...move,
+            ...moves,
         ],
     },
     ['blocking'],
