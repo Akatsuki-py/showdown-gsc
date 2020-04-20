@@ -45,7 +45,166 @@ const moves = [
     'https://play.pokemonshowdown.com/fx/foot.png',
 ];
 
-const trainers = [];
+const trainersDir = 'https://play.pokemonshowdown.com/sprites/trainers/';
+const trainers = [
+    trainersDir + 'aaron.png',
+    trainersDir + 'acerola.png',
+    trainersDir + 'acetrainer.png',
+    trainersDir + 'acetrainerf.png',
+    trainersDir + 'acetrainersnow.png',
+    trainersDir + 'acetrainersnowf.png',
+    trainersDir + 'agatha-gen3.png',
+    trainersDir + 'anabel.png',
+    trainersDir + 'beauty.png',
+    trainersDir + 'bertha.png',
+    trainersDir + 'biker.png',
+    trainersDir + 'birdkeeper.png',
+    trainersDir + 'blackbelt.png',
+    trainersDir + 'blaine.png',
+    trainersDir + 'blue.png',
+    trainersDir + 'boarder.png',
+    trainersDir + 'brock.png',
+    trainersDir + 'bruno.png',
+    trainersDir + 'bugcatcher.png',
+    trainersDir + 'bugsy.png',
+    trainersDir + 'burglar.png',
+    trainersDir + 'caitlin.png',
+    trainersDir + 'camper.png',
+    trainersDir + 'chuck.png',
+    trainersDir + 'clair.png',
+    trainersDir + 'drasna.png',
+    trainersDir + 'erika.png',
+    trainersDir + 'ethan.png',
+    trainersDir + 'eusine.png',
+    trainersDir + 'falkner.png',
+    trainersDir + 'firebreather.png',
+    trainersDir + 'fisherman.png',
+    trainersDir + 'fisherman-gen4.png',
+    trainersDir + 'gentleman.png',
+    trainersDir + 'grimsley.png',
+    trainersDir + 'hala.png',
+    trainersDir + 'hiker.png',
+    trainersDir + 'hiker-gen7.png',
+    trainersDir + 'hiker-gen4.png',
+    trainersDir + 'janine.png',
+    trainersDir + 'jasmine.png',
+    trainersDir + 'juggler.png',
+    trainersDir + 'kahili.png',
+    trainersDir + 'karen.png',
+    trainersDir + 'kimonogirl.png',
+    trainersDir + 'koga.png',
+    trainersDir + 'lance.png',
+    trainersDir + 'lass.png',
+    trainersDir + 'ltsurge.png',
+    trainersDir + 'malva.png',
+    trainersDir + 'marshal.png',
+    trainersDir + 'medium.png',
+    trainersDir + 'misty.png',
+    trainersDir + 'morty.png',
+    trainersDir + 'olivia.png',
+    trainersDir + 'picnicker.png',
+    trainersDir + 'pokefan.png',
+    trainersDir + 'pokefanf.png',
+    trainersDir + 'policeman-gen4.png',
+    trainersDir + 'policeman.png',
+    trainersDir + 'pryce.png',
+    trainersDir + 'psychic-gen4.png',
+    trainersDir + 'psychic.png',
+];
+
+const redirectTrainer = (URL: string): Redirect => {
+    const elite4Dir = `chrome-extension://${extensionID}/images/trainer/elite4/`;
+    const gen3Dir = `chrome-extension://${extensionID}/images/trainer/gen3/`;
+
+    const doPNG = (dir: string, name: string) => {
+        return dir + name + '.png';
+    };
+
+    switch (URL) {
+        case trainers[0]:
+            return {
+                redirectUrl: doPNG(elite4Dir, 'aaron'),
+            };
+        case trainers[1]:
+            return {
+                redirectUrl: doPNG(elite4Dir, 'acerola'),
+            };
+        case trainers[6]:
+            return {
+                redirectUrl: doPNG(elite4Dir, 'agatha'),
+            };
+        case trainers[7]:
+            return {
+                redirectUrl: doPNG(gen3Dir, 'anabel'),
+            };
+        case trainers[8]:
+            return {
+                redirectUrl: doPNG(trainersDir, 'beauty-gen2jp'),
+            };
+        case trainers[9]:
+            return {
+                redirectUrl: doPNG(elite4Dir, 'bertha'),
+            };
+        case trainersDir + 'caitlin.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'caitlin'),
+            };
+        case trainersDir + 'drasna.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'drasna'),
+            };
+        case trainersDir + 'fisherman.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'fisherman-gen2jp'),
+            };
+        case trainersDir + 'fisherman-gen4.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'fisherman-gen2jp'),
+            };
+        case trainersDir + 'grimsley.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'grimsley'),
+            };
+        case trainersDir + 'hala.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'hala'),
+            };
+        case trainersDir + 'kahili.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'kahili'),
+            };
+        case trainersDir + 'malva.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'malva'),
+            };
+        case trainersDir + 'marshal.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'marshal'),
+            };
+        case trainersDir + 'medium.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'medium-gen2jp'),
+            };
+        case trainersDir + 'olivia.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'olivia'),
+            };
+        case trainersDir + 'policeman-gen4.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'officer-gen2'),
+            };
+        case trainersDir + 'policeman.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'officer-gen2'),
+            };
+        default: {
+            const URLgen2 = URL.replace('-gen4', '').replace('.png', '') + '-gen2.png';
+            return {
+                redirectUrl: URLgen2,
+            };
+        }
+    }
+};
 
 const redirectMove = (URL: string): Redirect => {
     const movePath = `chrome-extension://${extensionID}/images/move/`;
@@ -205,6 +364,8 @@ chrome.webRequest.onBeforeRequest.addListener(
             return { redirectUrl: `chrome-extension://${extensionID}/images/others/graphics.js` };
         } else if (pokeball.indexOf(details.url) > -1) {
             return redirectPokeball();
+        } else if (trainers.indexOf(details.url) > -1) {
+            return redirectTrainer(details.url);
         } else {
             return redirectMove(details.url);
         }
@@ -215,6 +376,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             'https://*.pokemonshowdown.com/data/graphics.js?*',
             ...pokeball,
             ...moves,
+            ...trainers,
         ],
     },
     ['blocking'],
