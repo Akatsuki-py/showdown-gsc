@@ -63,6 +63,10 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
     background-color:rgba(0,0,0,.0) !important;
 }
 
+.statbar strong {
+    font-size: 130% !important;
+}
+
 .statbar .hpbar {
     margin-top: 4px !important;
     background-color: #000000 !important;
@@ -92,4 +96,8 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
     border-bottom: 2px solid #00B200 !important;
     border-right: 1px solid #00B200 !important;
     border-radius: 0px !important;
+}
+
+.trainer strong {
+    color: black;
 }
