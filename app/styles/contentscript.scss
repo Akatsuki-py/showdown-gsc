@@ -101,3 +101,22 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 .trainer strong {
     color: black;
 }
+
+.messagebar {
+    color: black !important;
+    left: 120px !important;
+    right: 120px !important;
+    background: #ffffff !important;
+    border-bottom: 3px double black !important;
+    border-left: 4px double black !important;
+    border-right: 4px double black !important;
+    border-top: 5px double black !important;
+    border-radius: 5px !important;
+    padding: 8 8px !important;
+    letter-spacing: -1px;
+    font-size: 150% !important;
+}
+
+.messagebar strong {
+    color: black !important;
+}
