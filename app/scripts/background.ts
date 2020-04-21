@@ -301,6 +301,11 @@ const redirectMove = (URL: string): Redirect => {
             return {
                 redirectUrl: movePath + 'rock.png',
             };
+        case 'leaf1.png':
+        case 'leaf2.png':
+            return {
+                redirectUrl: movePath + 'leaf.png',
+            };
         case 'weather-sunnyday.jpg':
             return {
                 redirectUrl: movePath + 'weather-sunnyday.jpg',
