@@ -2489,9 +2489,9 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                                                         };
 
 
-                                                                                                                        var leechseed1 = new Sprite(BattleEffects.energyball, pos1, this.scene);
-                                                                                                                        var leechseed2 = new Sprite(BattleEffects.energyball, pos2, this.scene);
-                                                                                                                        var leechseed3 = new Sprite(BattleEffects.energyball, pos3, this.scene);
+                                                                                                                        var leechseed1 = new Sprite(BattleEffects.seedling, pos1, this.scene);
+                                                                                                                        var leechseed2 = new Sprite(BattleEffects.seedling, pos2, this.scene);
+                                                                                                                        var leechseed3 = new Sprite(BattleEffects.seedling, pos3, this.scene);
                                                                                                                         this.scene.$spritesFront[this.siden].append(leechseed1.$el);
                                                                                                                         this.scene.$spritesFront[this.siden].append(leechseed2.$el);
                                                                                                                         this.scene.$spritesFront[this.siden].append(leechseed3.$el);
@@ -3156,6 +3156,16 @@ var BattleEffects = {
     hiddenpower: {
         url: 'hiddenpower.png',
         w: 16, h: 16
+    },
+
+    seed: {
+        url: 'seed.png',
+        w: 100, h: 100
+    },
+
+    seedling: {
+        url: 'seedling.png',
+        w: 100, h: 100
     },
 
     mistball: {
@@ -26743,7 +26753,7 @@ var BattleMoveAnims = {
     leechseed: {
         anim: function (scene, _ref264) {
             var attacker = _ref264[0], defender = _ref264[1];
-            scene.showEffect('energyball', {
+            scene.showEffect('seed', {
                 x: attacker.x,
                 y: attacker.y,
                 z: attacker.z,
@@ -26758,7 +26768,7 @@ var BattleMoveAnims = {
                     opacity: 0.6
                 },
                 'ballistic');
-            scene.showEffect('energyball', {
+            scene.showEffect('seed', {
                 x: attacker.x,
                 y: attacker.y,
                 z: attacker.z,
@@ -26774,7 +26784,7 @@ var BattleMoveAnims = {
                     opacity: 0.6
                 },
                 'ballistic');
-            scene.showEffect('energyball', {
+            scene.showEffect('seed', {
                 x: attacker.x,
                 y: attacker.y,
                 z: attacker.z,
