@@ -110,6 +110,34 @@ const trainers = [
     trainersDir + 'pryce.png',
     trainersDir + 'psychic-gen4.png',
     trainersDir + 'psychic.png',
+    trainersDir + 'red.png',
+    trainersDir + 'rocketgrunt.png',
+    trainersDir + 'rocketgruntf.png',
+    trainersDir + 'sabrina.png',
+    trainersDir + 'li.png',
+    trainersDir + 'sage.png',
+    trainersDir + 'sailor.png',
+    trainersDir + 'schoolkid.png',
+    trainersDir + 'scientist.png',
+    trainersDir + 'sidney.png',
+    trainersDir + 'siebold.png',
+    trainersDir + 'silver.png',
+    trainersDir + 'skier.png',
+    trainersDir + 'supernerd.png',
+    trainersDir + 'swimmerf.png',
+    trainersDir + 'swimmer.png',
+    trainersDir + 'tamer-gen3.png',
+    trainersDir + 'teacher.png',
+    trainersDir + 'twins.png',
+    trainersDir + 'whitney.png',
+    trainersDir + 'will.png',
+    trainersDir + 'youngster.png',
+    trainersDir + 'pokemaniac.png',
+    trainersDir + 'palmer.png',
+    trainersDir + 'molayne.png',
+    trainersDir + 'flint.png',
+    trainersDir + 'winona.png',
+    trainersDir + 'teamrocket.png',
 ];
 
 const redirectTrainer = (URL: string): Redirect => {
@@ -197,8 +225,59 @@ const redirectTrainer = (URL: string): Redirect => {
             return {
                 redirectUrl: doPNG(trainersDir, 'officer-gen2'),
             };
+        case trainersDir + 'li.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'sage-gen2'),
+            };
+        case trainersDir + 'schoolkid.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'schoolboy-gen2'),
+            };
+        case trainersDir + 'sidney.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'sidney'),
+            };
+        case trainersDir + 'siebold.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'siebold'),
+            };
+        case trainersDir + 'swimmer.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'swimmerm-gen2'),
+            };
+        case trainersDir + 'tamer-gen3.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'tamer-gen1rb'),
+            };
+        case trainersDir + 'pokemaniac.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'pokemaniac-gen1rb'),
+            };
+        case trainersDir + 'palmer.png':
+            return {
+                redirectUrl: doPNG(gen3Dir, 'palmer'),
+            };
+        case trainersDir + 'molayne.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'molayne'),
+            };
+        case trainersDir + 'flint.png':
+            return {
+                redirectUrl: doPNG(elite4Dir, 'flint'),
+            };
+        case trainersDir + 'winona.png':
+            return {
+                redirectUrl: doPNG(gen3Dir, 'winona'),
+            };
+        case trainersDir + 'teamrocket.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'jessiejames-gen1'),
+            };
         default: {
-            const URLgen2 = URL.replace('-gen4', '').replace('.png', '') + '-gen2.png';
+            const URLgen2 =
+                URL.replace('-gen7', '')
+                    .replace('-gen4', '')
+                    .replace('.png', '') + '-gen2.png';
             return {
                 redirectUrl: URLgen2,
             };
