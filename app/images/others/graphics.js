@@ -2084,6 +2084,7 @@ var _temp; function _createSuper(Derived) { return function () { var Super = _ge
                                                                                             if (pokemon.hasVolatile('substitute')) this.animSub(true);
                                                                                             return;
                                                                                         }
+                                                                                        BattleSound.playEffect(seDir + 'ball_explode.mp3');
                                                                                         if (this.cryurl) {
                                                                                             BattleSound.playEffect(this.cryurl);
                                                                                         }
