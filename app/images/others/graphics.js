@@ -1465,7 +1465,8 @@ case 1:
 this.bgm=BattleSound.loadBgm(musicDir+'blue.mp3',0,(60*2+22.1)*1000,this.bgm);
 break;
 case 2:
-this.bgm=BattleSound.loadBgm(musicDir+'mura.mp3',0,(60*2+55)*1000,this.bgm);
+
+this.bgm=BattleSound.loadBgm(musicDir+'mura.mp3',(60*1+39)*1000,(60*2+53.8)*1000,this.bgm);
 break;
 case 3:
 this.bgm=BattleSound.loadBgm(musicDir+'johto_gymleader.mp3',0,(60*2+19.1)*1000,this.bgm);
@@ -1480,10 +1481,15 @@ case 6:
 this.bgm=BattleSound.loadBgm(musicDir+'Battle! Marnie [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,60*3*1000,this.bgm);
 break;
 case 7:
-this.bgm=BattleSound.loadBgm(musicDir+'Battle! Oleana [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,(60*2+35)*1000,this.bgm);
+
+this.bgm=BattleSound.loadBgm(musicDir+'Battle! Oleana [8-bit; VRC6] - Pokemon Sword and Shield.mp3',43.8*1000,(60*1+47.8)*1000,this.bgm);
 break;
 case 8:
 this.bgm=BattleSound.loadBgm(musicDir+'Palette Patrol.mp3',0,(60*1+34)*1000,this.bgm);
+break;
+case 9:
+
+this.bgm=BattleSound.loadBgm(musicDir+'【Chiptune】 Battle! VS Trainer (Naljo) - Pokemon Prism (build 235)  Original Pokemon-Style Battle.mp3',(60*1+2.2)*1000,(60*2+3.4)*1000,this.bgm);
 break;
 default:
 
