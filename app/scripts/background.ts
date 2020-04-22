@@ -35,6 +35,7 @@ const moves = [
     `${fxDir}impact.png`,
     `${fxDir}rightslash.png`,
     `${fxDir}sword.png`,
+    `${fxDir}chargeball.png`,
     `${fxDir}hiddenpower.png`,
     `${fxDir}flareball.png`,
     `${fxDir}pointer.png`,

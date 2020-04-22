@@ -2977,6 +2977,10 @@ electroball:{
 url:'electroball.png',
 w:100,h:100},
 
+chargeball:{
+url:'chargeball.png',
+w:32,h:32},
+
 hiddenpower:{
 url:'hiddenpower.png',
 w:16,h:16},
@@ -3958,7 +3962,7 @@ time:600},
 
 chargestatus:{
 anim:function(scene,_ref20){var attacker=_ref20[0];
-scene.showEffect('electroball',{
+scene.showEffect('chargeball',{
 x:attacker.x-60,
 y:attacker.y+40,
 z:attacker.z,
@@ -3972,7 +3976,7 @@ scale:0.2,
 opacity:0.2,
 time:300},
 'linear','fade');
-scene.showEffect('electroball',{
+scene.showEffect('chargeball',{
 x:attacker.x+60,
 y:attacker.y-5,
 z:attacker.z,
@@ -3986,7 +3990,7 @@ scale:0.2,
 opacity:0.2,
 time:300},
 'linear','fade');
-scene.showEffect('electroball',{
+scene.showEffect('chargeball',{
 x:attacker.x-30,
 y:attacker.y+60,
 z:attacker.z,
@@ -4000,7 +4004,7 @@ scale:0.2,
 opacity:0.2,
 time:400},
 'linear','fade');
-scene.showEffect('electroball',{
+scene.showEffect('chargeball',{
 x:attacker.x+20,
 y:attacker.y-50,
 z:attacker.z,
@@ -4014,7 +4018,7 @@ scale:0.2,
 opacity:0.2,
 time:400},
 'linear','fade');
-scene.showEffect('electroball',{
+scene.showEffect('chargeball',{
 x:attacker.x-70,
 y:attacker.y-50,
 z:attacker.z,
