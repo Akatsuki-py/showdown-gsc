@@ -1473,6 +1473,18 @@ break;
 case 4:
 this.bgm=BattleSound.loadBgm(musicDir+'kanto_gymleader.mp3',0,(60*1+19.6)*1000,this.bgm);
 break;
+case 5:
+this.bgm=BattleSound.loadBgm(musicDir+'Battle! Hop [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,(60*3+13)*1000,this.bgm);
+break;
+case 6:
+this.bgm=BattleSound.loadBgm(musicDir+'Battle! Marnie [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,60*3*1000,this.bgm);
+break;
+case 7:
+this.bgm=BattleSound.loadBgm(musicDir+'Battle! Oleana [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,(60*2+35)*1000,this.bgm);
+break;
+case 8:
+this.bgm=BattleSound.loadBgm(musicDir+'Palette Patrol.mp3',0,(60*1+34)*1000,this.bgm);
+break;
 default:
 
 this.bgm=BattleSound.loadBgm(musicDir+'trainer.mp3',28*1000,(60*2+5.5)*1000,this.bgm);
