@@ -1461,23 +1461,21 @@ this.bgmNum=bgmNum;
 
 var ext=window.nodewebkit?'.ogg':'.mp3';
 switch(bgmNum){
-case 0:
-this.bgm=BattleSound.loadBgm(musicDir+'trainer.mp3',0,100000,this.bgm);
-break;
 case 1:
-this.bgm=BattleSound.loadBgm(musicDir+'blue.mp3',0,100000,this.bgm);
+this.bgm=BattleSound.loadBgm(musicDir+'blue.mp3',0,(60*2+22.1)*1000,this.bgm);
 break;
 case 2:
-this.bgm=BattleSound.loadBgm(musicDir+'mura.mp3',0,100000,this.bgm);
+this.bgm=BattleSound.loadBgm(musicDir+'mura.mp3',0,(60*2+55)*1000,this.bgm);
 break;
 case 3:
-this.bgm=BattleSound.loadBgm(musicDir+'johto_gymleader.mp3',0,100000,this.bgm);
+this.bgm=BattleSound.loadBgm(musicDir+'johto_gymleader.mp3',0,(60*2+19.1)*1000,this.bgm);
 break;
 case 4:
-this.bgm=BattleSound.loadBgm(musicDir+'kanto_gymleader.mp3',0,100000,this.bgm);
+this.bgm=BattleSound.loadBgm(musicDir+'kanto_gymleader.mp3',0,(60*1+19.6)*1000,this.bgm);
 break;
 default:
-this.bgm=BattleSound.loadBgm(musicDir+'trainer.mp3',0,100000,this.bgm);
+
+this.bgm=BattleSound.loadBgm(musicDir+'trainer.mp3',28*1000,(60*2+5.5)*1000,this.bgm);
 break;}
 
 };_proto.
