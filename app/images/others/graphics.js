@@ -532,11 +532,32 @@ animEntry.anim(this,participants.map(function(p){return p.sprite;}));
 
 runOtherAnim=function runOtherAnim(moveid,participants){
 if(!this.animating)return;
+
+switch(moveid){
+case'leech':
+BattleSound.playEffect(seDir+'status_ailment/'+'LeechSeedDamage.mp3');
+break;
+default:
+break;}
+
+
 BattleOtherAnims[moveid].anim(this,participants.map(function(p){return p.sprite;}));
 };_proto.
 
 runStatusAnim=function runStatusAnim(moveid,participants){
 if(!this.animating)return;
+
+switch(moveid){
+case'psn':
+BattleSound.playEffect(seDir+'status_ailment/'+'Poisoned.mp3');
+break;
+case'brn':
+BattleSound.playEffect(seDir+'status_ailment/'+'BurnDamage.mp3');
+break;
+default:
+break;}
+
+
 BattleStatusAnims[moveid].anim(this,participants.map(function(p){return p.sprite;}));
 };_proto.
 
@@ -1270,6 +1291,15 @@ this.resultAnim(pokemon,result,'neutral');
 };_proto.
 resultAnim=function resultAnim(pokemon,result,type){
 if(!this.animating)return;
+
+switch(result){
+case"Asleep":
+BattleSound.playEffect(seDir+'status_ailment/'+'Sleeping.mp3');
+break;
+default:
+break;}
+
+
 var $effect=$('<div class="result '+type+'result"><strong>'+result+'</strong></div>');
 this.$fx.append($effect);
 $effect.delay(this.timeOffset).css({
