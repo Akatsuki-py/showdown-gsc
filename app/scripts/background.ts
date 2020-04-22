@@ -47,6 +47,8 @@ const moves = [
     `${fxDir}seed.png`,
     `${fxDir}seedling.png`,
     `${fxDir}weather-sunnyday.jpg`,
+    `${fxDir}weather-raindance.jpg`,
+    `${fxDir}weather-sandstorm.jpg`,
 ];
 
 const trainersDir = 'https://play.pokemonshowdown.com/sprites/trainers/';
@@ -309,6 +311,14 @@ const redirectMove = (URL: string): Redirect => {
         case 'weather-sunnyday.jpg':
             return {
                 redirectUrl: movePath + 'weather-sunnyday.jpg',
+            };
+        case 'weather-raindance.jpg':
+            return {
+                redirectUrl: movePath + 'weather-raindance.jpg',
+            };
+        case 'weather-sandstorm.jpg':
+            return {
+                redirectUrl: movePath + 'weather-sandstorm.jpg',
             };
         default:
             return {
