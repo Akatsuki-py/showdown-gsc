@@ -3,6 +3,8 @@ const seDir = `chrome-extension://${extensionID}/images/se/`;
 const musicDir = `chrome-extension://${extensionID}/images/music/`;
 const introDir = `chrome-extension://${extensionID}/images/intro/`;
 
+const SelectSE = new Audio(`chrome-extension://${extensionID}/images/se/Select.wav`);
+
 export const injectSEDir = () => {
     const th = document.getElementsByTagName('body')[0];
     const s = document.createElement('script');
@@ -37,4 +39,14 @@ export const injectEmbed = () => {
     embed.type = 'audio/wav';
     embed.data = `chrome-extension://${extensionID}/images/se/Select.wav`;
     th.appendChild(embed);
+};
+
+export const injectSelectSE = () => {
+    const moves = document.getElementsByName('chooseMove');
+    for (let i = 0; i < 4; i++) {
+        const move = moves[i];
+        move.onmousedown = function() {
+            SelectSE.play();
+        };
+    }
 };
