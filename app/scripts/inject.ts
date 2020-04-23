@@ -49,4 +49,14 @@ export const injectSelectSE = () => {
             SelectSE.play();
         };
     }
+
+    const switchmenu = document.getElementsByClassName('switchmenu');
+    const btns = switchmenu[0].getElementsByTagName('button');
+
+    for (let i = 0; i < 6; i++) {
+        const btn = btns[i];
+        btn.onmousedown = function() {
+            SelectSE.play();
+        };
+    }
 };

@@ -183,19 +183,14 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 
     background: white !important;
 
-    small.type {
-        color: black !important;
-    }
-
-    small.pp {
-        color: black !important;
-    }
+    width: 204px !important;
+    margin-right: 10px !important;
 }
 
 .switchselect button {
     font-weight: 400 !important;
     font-style: normal !important;
-    color: #CC134B !important;
+    color: blue !important;
     cursor: default;
     font-family: Pokemon !important;
     letter-spacing: -4px !important; 
