@@ -1,5 +1,7 @@
 import { NameToID } from './util';
 
+const extensionID = chrome.i18n.getMessage('@@extension_id');
+
 const trimStatus = (name: string): string => {
     const result = name.match(/\(.*\)/gi) || [''];
     const status = result[0];
@@ -25,7 +27,6 @@ const setDone = (icon: Element) => {
 };
 
 const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
-    const extensionID = chrome.i18n.getMessage('@@extension_id');
     const ariaLabel = icon.getAttribute('aria-label') || '';
     let style = icon.getAttribute('style') || '';
 
@@ -41,7 +42,7 @@ const makeIconGen2 = (icon: HTMLSpanElement): HTMLSpanElement => {
     return icon;
 };
 
-export const makeIconsGen2 = (teamicons: HTMLCollectionOf<Element>) => {
+export const makeTeamiconsGen2 = (teamicons: HTMLCollectionOf<Element>) => {
     const trainer = teamicons[0];
     if (!isDone(trainer)) {
         // 0, 1 => 自分1,2行目
@@ -68,5 +69,28 @@ export const makeIconsGen2 = (teamicons: HTMLCollectionOf<Element>) => {
         });
 
         setDone(opponent);
+    }
+};
+
+export const makeSwitchIconGen2 = (switchmenu: HTMLCollectionOf<Element>) => {
+    const btns = switchmenu[0].getElementsByTagName('button');
+
+    for (let i = 0; i < 6; i++) {
+        const btn = btns[i];
+        const name = btn.textContent || '';
+        const ID = NameToID(name);
+
+        const style = `background:transparent url(chrome-extension://${extensionID}/images/minidex/${ID}/0.png) no-repeat scroll 12px 4px;`;
+        const picon = btn.getElementsByClassName('picon')[0];
+        picon.setAttribute('style', style);
+
+        const hpbars = btn.getElementsByClassName('hpbar');
+        if (hpbars.length > 0) {
+            const hpbar = hpbars[0];
+            const style = hpbar.getElementsByTagName('span')[0].style;
+            let width = Number(style.width.replace('px', ''));
+            width *= 190 / 92;
+            style.width = String(width) + 'px';
+        }
     }
 };

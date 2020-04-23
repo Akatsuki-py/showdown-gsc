@@ -22,6 +22,7 @@
   },
   "permissions": [
     "https://*.pokemonshowdown.com/",
+    "http://127.0.0.1:5500/*",
     "webRequest",
     "webRequestBlocking"
   ],
@@ -34,7 +35,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.pokemonshowdown.com/*"
+        "https://*.pokemonshowdown.com/*",
+        "http://127.0.0.1:5500/*"
       ],
       "css": [
         "styles/contentscript.css"
@@ -51,6 +53,7 @@
     "*.ttf",
     "*.js",
     "*.mp3",
-    "*.jpg"
+    "*.jpg",
+    "*.wav"
   ]
 }
