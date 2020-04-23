@@ -15,6 +15,12 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 .battle-controls {
     font-size: 65% !important;
     font-family: Pokemon !important;
+
+    .whatdo {
+        font-size: 110% !important;
+        color: black !important;
+        letter-spacing: -1px !important;
+    }
 }
 
 .trainer strong {
@@ -25,10 +31,6 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 
 .turn {
     font-size: 170% !important;
-}
-
-.battle-controls .whatdo {
-    font-size: 110% !important;
 }
 
 .turn {
@@ -117,8 +119,47 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
     padding: 8 8px !important;
     letter-spacing: -1px;
     font-size: 150% !important;
+    box-shadow: 0px 2px black !important;
 }
 
 .messagebar strong {
     color: black !important;
+}
+
+
+.movemenu button {
+    border-radius: 1px !important;
+    box-shadow: 0px 2px black !important;
+
+    border-bottom: 3px double black !important;
+    border-left: 4px double black !important;
+    border-right: 4px double black !important;
+    border-top: 4px double black !important;
+    border-top-width: thick !important;
+    border-radius: 5px !important;
+
+    padding: 6px 4px 2px !important;
+
+    font-size: 70% !important;
+    font-family: Pokemon !important;
+    letter-spacing: -1px;
+
+    background: white !important;
+
+    small.type {
+        color: black !important;
+    }
+
+    small.pp {
+        color: black !important;
+    }
+}
+
+.moveselect button {
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: #CC134B !important;
+    cursor: default;
+    font-family: Pokemon !important;
+    letter-spacing: -4px !important; 
 }
