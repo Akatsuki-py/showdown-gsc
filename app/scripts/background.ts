@@ -146,11 +146,24 @@ const trainers = [
     trainersDir + 'flint.png',
     trainersDir + 'winona.png',
     trainersDir + 'teamrocket.png',
+    trainersDir + 'biker-gen4.png',
+    trainersDir + 'byron.png',
+    trainersDir + 'candice.png',
+    trainersDir + 'crasherwake.png',
+    trainersDir + 'fantina.png',
+    trainersDir + 'gardenia.png',
+    trainersDir + 'maylene.png',
+    trainersDir + 'roark.png',
+    trainersDir + 'volkner.png',
+    trainersDir + 'ghetsis.png',
+    trainersDir + 'ghetsis-gen5bw.png',
 ];
 
 const redirectTrainer = (URL: string): Redirect => {
     const elite4Dir = `chrome-extension://${extensionID}/images/trainer/elite4/`;
     const gen3Dir = `chrome-extension://${extensionID}/images/trainer/gen3/`;
+    const gen4Dir = `chrome-extension://${extensionID}/images/trainer/gen4/`;
+    const gen5Dir = `chrome-extension://${extensionID}/images/trainer/gen5/`;
 
     const doPNG = (dir: string, name: string) => {
         return dir + name + '.png';
@@ -280,6 +293,51 @@ const redirectTrainer = (URL: string): Redirect => {
         case trainersDir + 'teamrocket.png':
             return {
                 redirectUrl: doPNG(trainersDir, 'jessiejames-gen1'),
+            };
+        case trainersDir + 'acetrainersnow.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'acetrainer-gen2'),
+            };
+        case trainersDir + 'acetrainersnowf.png':
+            return {
+                redirectUrl: doPNG(trainersDir, 'acetrainerf-gen2'),
+            };
+        case trainersDir + 'byron.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'byron'),
+            };
+        case trainersDir + 'candice.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'candice'),
+            };
+        case trainersDir + 'crasherwake.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'crasherwake'),
+            };
+        case trainersDir + 'fantina.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'fantina'),
+            };
+        case trainersDir + 'gardenia.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'gardenia'),
+            };
+        case trainersDir + 'maylene.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'maylene'),
+            };
+        case trainersDir + 'roark.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'roark'),
+            };
+        case trainersDir + 'volkner.png':
+            return {
+                redirectUrl: doPNG(gen4Dir, 'volkner'),
+            };
+        case trainersDir + 'ghetsis.png':
+        case trainersDir + 'ghetsis-gen5bw.png':
+            return {
+                redirectUrl: doPNG(gen5Dir, 'ghetsis'),
             };
         default: {
             const URLgen2 =
