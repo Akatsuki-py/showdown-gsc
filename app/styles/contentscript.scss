@@ -18,6 +18,7 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 }
 
 .trainer strong {
+    letter-spacing: -1px;
     font-size: 80% !important;
     font-family: Pokemon !important;
 }
@@ -64,6 +65,7 @@ $imagePath: 'chrome-extension://__MSG_@@extension_id__/images/';
 }
 
 .statbar strong {
+    letter-spacing: -1px;
     font-size: 130% !important;
 }
 
