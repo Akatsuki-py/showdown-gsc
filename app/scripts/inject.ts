@@ -23,3 +23,18 @@ export const injectIntroDir = () => {
     s.textContent = `const introDir = "${introDir}"`;
     return th.appendChild(s);
 };
+
+export const injectEmbed = () => {
+    const th = document.getElementsByTagName('body')[0];
+    const style = document.createElement('style');
+    style.textContent = `
+        embed { display: none; }
+        button:active + embed { display: block; }
+    `;
+    th.appendChild(style);
+
+    const embed = document.createElement('object');
+    embed.type = 'audio/wav';
+    embed.data = `chrome-extension://${extensionID}/images/se/Select.wav`;
+    th.appendChild(embed);
+};

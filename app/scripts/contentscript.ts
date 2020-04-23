@@ -1,5 +1,5 @@
 import { makeIconsGen2 } from './icon';
-import { injectSEDir, injectMusicDir, injectIntroDir } from './inject';
+import { injectSEDir, injectMusicDir, injectIntroDir, injectEmbed } from './inject';
 
 // const extensionID = chrome.i18n.getMessage('@@extension_id');
 
@@ -13,3 +13,4 @@ const interval = setInterval(function() {
 injectSEDir();
 injectMusicDir();
 injectIntroDir();
+injectEmbed();
