@@ -21,6 +21,7 @@
     "default_popup": "pages/popup.html"
   },
   "permissions": [
+    "https://play.pokemonshowdown.com/",
     "https://*.pokemonshowdown.com/gen2*",
     "https://*.pokemonshowdown.com/battle-gen2*",
     "http://127.0.0.1:5500/*",
@@ -36,6 +37,7 @@
   "content_scripts": [
     {
       "matches": [
+        "https://play.pokemonshowdown.com/",
         "https://*.pokemonshowdown.com/gen2*",
         "https://*.pokemonshowdown.com/battle-gen2*",
         "http://127.0.0.1:5500/*"
