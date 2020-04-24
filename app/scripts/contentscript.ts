@@ -15,5 +15,7 @@ const interval = setInterval(function() {
     }
 }, 100);
 
-// SE
-injectSelectSE();
+const interval2 = setInterval(function() {
+    // SE
+    injectSelectSE();
+}, 1000);
