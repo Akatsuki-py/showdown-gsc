@@ -26,8 +26,9 @@ Chrome extension that makes Pokemon Showdown PokemonGSC-style.
 
 ```bash
 # Requirements: Nodejs & npm(yarn)
-> npm install   # yarn install
-> npm run build # yarn build
+$ git clone https://github.com/Akatsuki-py/showdown-gsc.git
+$ npm install   # yarn install
+$ npm run build # yarn build
 ```
 
 Then import the extension on your Chrome.
