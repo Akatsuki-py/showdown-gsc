@@ -8,6 +8,11 @@ const pokeball = [
     'https://play.pokemonshowdown.com/fx/pokeball.png',
     'https://play.pokemonshowdown.com/sprites/pokemonicons-pokeball-sheet.png',
 ];
+const redirectPokeball = (): Redirect => {
+    return {
+        redirectUrl: `chrome-extension://${extensionID}/images/others/pokeball.png`,
+    };
+};
 
 const fxDir = 'https://play.pokemonshowdown.com/fx/';
 const moves = [
@@ -52,6 +57,46 @@ const moves = [
     `${fxDir}weather-sandstorm.jpg`,
     `${fxDir}bg-space.jpg`,
 ];
+
+const redirectMove = (URL: string): Redirect => {
+    const movePath = `chrome-extension://${extensionID}/images/move/`;
+    const prefix = 'https://play.pokemonshowdown.com/fx/';
+
+    URL = URL.replace(prefix, '');
+    switch (URL) {
+        case 'rock1.png':
+        case 'rock2.png':
+        case 'rock3.png':
+            return {
+                redirectUrl: movePath + 'rock.png',
+            };
+        case 'leaf1.png':
+        case 'leaf2.png':
+            return {
+                redirectUrl: movePath + 'leaf.png',
+            };
+        case 'weather-sunnyday.jpg':
+            return {
+                redirectUrl: movePath + 'weather-sunnyday.jpg',
+            };
+        case 'weather-raindance.jpg':
+            return {
+                redirectUrl: movePath + 'weather-raindance.jpg',
+            };
+        case 'weather-sandstorm.jpg':
+            return {
+                redirectUrl: movePath + 'weather-sandstorm.jpg',
+            };
+        case 'bg-space.jpg':
+            return {
+                redirectUrl: movePath + 'bg-space.jpg',
+            };
+        default:
+            return {
+                redirectUrl: movePath + URL,
+            };
+    }
+};
 
 const trainersDir = 'https://play.pokemonshowdown.com/sprites/trainers/';
 const trainers = [
@@ -158,7 +203,6 @@ const trainers = [
     trainersDir + 'ghetsis.png',
     trainersDir + 'ghetsis-gen5bw.png',
 ];
-
 const redirectTrainer = (URL: string): Redirect => {
     const elite4Dir = `chrome-extension://${extensionID}/images/trainer/elite4/`;
     const gen3Dir = `chrome-extension://${extensionID}/images/trainer/gen3/`;
@@ -351,49 +395,24 @@ const redirectTrainer = (URL: string): Redirect => {
     }
 };
 
-const redirectMove = (URL: string): Redirect => {
-    const movePath = `chrome-extension://${extensionID}/images/move/`;
-    const prefix = 'https://play.pokemonshowdown.com/fx/';
-
-    URL = URL.replace(prefix, '');
-    switch (URL) {
-        case 'rock1.png':
-        case 'rock2.png':
-        case 'rock3.png':
-            return {
-                redirectUrl: movePath + 'rock.png',
-            };
-        case 'leaf1.png':
-        case 'leaf2.png':
-            return {
-                redirectUrl: movePath + 'leaf.png',
-            };
-        case 'weather-sunnyday.jpg':
-            return {
-                redirectUrl: movePath + 'weather-sunnyday.jpg',
-            };
-        case 'weather-raindance.jpg':
-            return {
-                redirectUrl: movePath + 'weather-raindance.jpg',
-            };
-        case 'weather-sandstorm.jpg':
-            return {
-                redirectUrl: movePath + 'weather-sandstorm.jpg',
-            };
-        case 'bg-space.jpg':
-            return {
-                redirectUrl: movePath + 'bg-space.jpg',
-            };
-        default:
-            return {
-                redirectUrl: movePath + URL,
-            };
-    }
-};
-
-const redirectPokeball = (): Redirect => {
+const musicDir = `chrome-extension://${extensionID}/images/music/`;
+const musics = [
+    'https://play.pokemonshowdown.com/audio/blue.mp3',
+    'https://play.pokemonshowdown.com/audio/mura.mp3',
+    'https://play.pokemonshowdown.com/audio/johto_gymleader.mp3',
+    'https://play.pokemonshowdown.com/audio/kanto_gymleader.mp3',
+    'https://play.pokemonshowdown.com/audio/Hop.mp3',
+    'https://play.pokemonshowdown.com/audio/Marnie.mp3',
+    'https://play.pokemonshowdown.com/audio/Oleana.mp3',
+    'https://play.pokemonshowdown.com/audio/pp.mp3',
+    'https://play.pokemonshowdown.com/audio/naljo_trainer.mp3',
+    'https://play.pokemonshowdown.com/audio/trainer.mp3',
+];
+const redirectMusic = (URL: string): Redirect => {
     return {
-        redirectUrl: `chrome-extension://${extensionID}/images/others/pokeball.png`,
+        redirectUrl: decodeURI(
+            musicDir + URL.replace('https://play.pokemonshowdown.com/audio/', ''),
+        ),
     };
 };
 
@@ -408,6 +427,8 @@ chrome.webRequest.onBeforeRequest.addListener(
             return redirectPokeball();
         } else if (trainers.indexOf(details.url) > -1) {
             return redirectTrainer(details.url);
+        } else if (musics.indexOf(details.url) > -1) {
+            return redirectMusic(details.url);
         } else {
             return redirectMove(details.url);
         }
@@ -419,6 +440,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             ...pokeball,
             ...moves,
             ...trainers,
+            ...musics,
         ],
     },
     ['blocking'],

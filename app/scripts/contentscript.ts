@@ -1,5 +1,5 @@
 import { makeTeamiconsGen2, makeSwitchIconGen2 } from './icon';
-import { injectSEDir, injectMusicDir, injectIntroDir, injectSelectSE } from './inject';
+import { injectSEDir, injectIntroDir, injectSelectSE } from './inject';
 
 // const extensionID = chrome.i18n.getMessage('@@extension_id');
 
@@ -17,6 +17,5 @@ const interval = setInterval(function() {
 
 // SE
 injectSEDir();
-injectMusicDir();
 injectIntroDir();
 injectSelectSE();

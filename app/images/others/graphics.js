@@ -554,6 +554,9 @@ break;
 case'brn':
 BattleSound.playEffect(seDir+'status_ailment/'+'BurnDamage.mp3');
 break;
+case'confused':
+BattleSound.playEffect(seDir+'status_ailment/'+'Confused.mp3');
+break;
 default:
 break;}
 
@@ -1492,38 +1495,38 @@ this.bgmNum=bgmNum;
 var ext=window.nodewebkit?'.ogg':'.mp3';
 switch(bgmNum){
 case 1:
-this.bgm=BattleSound.loadBgm(musicDir+'blue.mp3',0,(60*2+22.1)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/blue.mp3',0,(60*2+22.1)*1000,this.bgm);
 break;
 case 2:
 
-this.bgm=BattleSound.loadBgm(musicDir+'mura.mp3',(60*1+39)*1000,(60*2+53.8)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/mura.mp3',(60*1+39)*1000,(60*2+53.8)*1000,this.bgm);
 break;
 case 3:
-this.bgm=BattleSound.loadBgm(musicDir+'johto_gymleader.mp3',0,(60*2+19.1)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/johto_gymleader.mp3',0,(60*2+18.9)*1000,this.bgm);
 break;
 case 4:
-this.bgm=BattleSound.loadBgm(musicDir+'kanto_gymleader.mp3',0,(60*1+19.6)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/kanto_gymleader.mp3',0,(60*1+19.6)*1000,this.bgm);
 break;
 case 5:
-this.bgm=BattleSound.loadBgm(musicDir+'Battle! Hop [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,(60*3+13)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/Hop.mp3',0,(60*3+13)*1000,this.bgm);
 break;
 case 6:
-this.bgm=BattleSound.loadBgm(musicDir+'Battle! Marnie [8-bit; VRC6] - Pokemon Sword and Shield.mp3',0,60*3*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/Marnie.mp3',0,60*3*1000,this.bgm);
 break;
 case 7:
 
-this.bgm=BattleSound.loadBgm(musicDir+'Battle! Oleana [8-bit; VRC6] - Pokemon Sword and Shield.mp3',43.8*1000,(60*1+47.8)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/Oleana.mp3',43.8*1000,(60*1+47.8)*1000,this.bgm);
 break;
 case 8:
-this.bgm=BattleSound.loadBgm(musicDir+'Palette Patrol.mp3',0,(60*1+34)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/pp.mp3',0,(60*1+34)*1000,this.bgm);
 break;
 case 9:
 
-this.bgm=BattleSound.loadBgm(musicDir+'【Chiptune】 Battle! VS Trainer (Naljo) - Pokemon Prism (build 235)  Original Pokemon-Style Battle.mp3',(60*1+2.2)*1000,(60*2+3.4)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/naljo_trainer.mp3',(60*1+2.2)*1000,(60*2+3.4)*1000,this.bgm);
 break;
 default:
 
-this.bgm=BattleSound.loadBgm(musicDir+'trainer.mp3',28*1000,(60*2+5.5)*1000,this.bgm);
+this.bgm=BattleSound.loadBgm('audio/trainer.mp3',28*1000,(60*2+5.5)*1000,this.bgm);
 break;}
 
 };_proto.
