@@ -1,22 +1,6 @@
 const extensionID = chrome.i18n.getMessage('@@extension_id');
-const seDir = `chrome-extension://${extensionID}/images/se/`;
-const introDir = `chrome-extension://${extensionID}/images/intro/`;
 
 const SelectSE = new Audio(`chrome-extension://${extensionID}/images/se/Select.wav`);
-
-export const injectSEDir = () => {
-    const th = document.getElementsByTagName('body')[0];
-    const s = document.createElement('script');
-    s.textContent = `const seDir = "${seDir}"`;
-    return th.appendChild(s);
-};
-
-export const injectIntroDir = () => {
-    const th = document.getElementsByTagName('body')[0];
-    const s = document.createElement('script');
-    s.textContent = `const introDir = "${introDir}"`;
-    return th.appendChild(s);
-};
 
 export const injectSelectSE = () => {
     const moves = document.getElementsByName('chooseMove');

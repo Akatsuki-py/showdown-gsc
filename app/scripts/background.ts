@@ -16,6 +16,9 @@ const redirectPokeball = (): Redirect => {
 
 const fxDir = 'https://play.pokemonshowdown.com/fx/';
 const moves = [
+    `${fxDir}ball0.png`,
+    `${fxDir}ball1.png`,
+    `${fxDir}ball2.png`,
     `${fxDir}waterwisp.png`,
     `${fxDir}fireball.png`,
     `${fxDir}poisonwisp.png`,
@@ -57,9 +60,9 @@ const moves = [
     `${fxDir}weather-sandstorm.jpg`,
     `${fxDir}bg-space.jpg`,
 ];
-
 const redirectMove = (URL: string): Redirect => {
     const movePath = `chrome-extension://${extensionID}/images/move/`;
+    const introPath = `chrome-extension://${extensionID}/images/intro/`;
     const prefix = 'https://play.pokemonshowdown.com/fx/';
 
     URL = URL.replace(prefix, '');
@@ -90,6 +93,12 @@ const redirectMove = (URL: string): Redirect => {
         case 'bg-space.jpg':
             return {
                 redirectUrl: movePath + 'bg-space.jpg',
+            };
+        case 'ball0.png':
+        case 'ball1.png':
+        case 'ball2.png':
+            return {
+                redirectUrl: introPath + URL,
             };
         default:
             return {
@@ -416,6 +425,25 @@ const redirectMusic = (URL: string): Redirect => {
     };
 };
 
+const seDir = `chrome-extension://${extensionID}/images/se/`;
+const ses = [
+    'https://play.pokemonshowdown.com/se/' + 'status_ailment/' + 'LeechSeedDamage.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'status_ailment/' + 'Poisoned.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'status_ailment/' + 'BurnDamage.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'status_ailment/' + 'Confused.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'status_ailment/' + 'Sleeping.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'ball_explode.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'fainted.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'hit.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'super_effective.mp3',
+    'https://play.pokemonshowdown.com/se/' + 'not_very_effective.mp3',
+];
+const redirectSE = (URL: string): Redirect => {
+    return {
+        redirectUrl: seDir + URL.replace('https://play.pokemonshowdown.com/se/', ''),
+    };
+};
+
 chrome.webRequest.onBeforeRequest.addListener(
     (details) => {
         console.log(details.url);
@@ -429,6 +457,8 @@ chrome.webRequest.onBeforeRequest.addListener(
             return redirectTrainer(details.url);
         } else if (musics.indexOf(details.url) > -1) {
             return redirectMusic(details.url);
+        } else if (ses.indexOf(details.url) > -1) {
+            return redirectSE(details.url);
         } else {
             return redirectMove(details.url);
         }
@@ -441,6 +471,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             ...moves,
             ...trainers,
             ...musics,
+            ...ses,
         ],
     },
     ['blocking'],

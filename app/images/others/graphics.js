@@ -535,7 +535,7 @@ if(!this.animating)return;
 
 switch(moveid){
 case'leech':
-BattleSound.playEffect(seDir+'status_ailment/'+'LeechSeedDamage.mp3');
+BattleSound.playEffect('se/'+'status_ailment/'+'LeechSeedDamage.mp3');
 break;
 default:
 break;}
@@ -549,13 +549,13 @@ if(!this.animating)return;
 
 switch(moveid){
 case'psn':
-BattleSound.playEffect(seDir+'status_ailment/'+'Poisoned.mp3');
+BattleSound.playEffect('se/'+'status_ailment/'+'Poisoned.mp3');
 break;
 case'brn':
-BattleSound.playEffect(seDir+'status_ailment/'+'BurnDamage.mp3');
+BattleSound.playEffect('se/'+'status_ailment/'+'BurnDamage.mp3');
 break;
 case'confused':
-BattleSound.playEffect(seDir+'status_ailment/'+'Confused.mp3');
+BattleSound.playEffect('se/'+'status_ailment/'+'Confused.mp3');
 break;
 default:
 break;}
@@ -1297,7 +1297,7 @@ if(!this.animating)return;
 
 switch(result){
 case"Asleep":
-BattleSound.playEffect(seDir+'status_ailment/'+'Sleeping.mp3');
+BattleSound.playEffect('se/'+'status_ailment/'+'Sleeping.mp3');
 break;
 default:
 break;}
@@ -2017,7 +2017,7 @@ this.resetStatbar(pokemon);
 if(pokemon.hasVolatile('substitute'))this.animSub(true);
 return;
 }
-BattleSound.playEffect(seDir+'ball_explode.mp3');
+BattleSound.playEffect('se/'+'ball_explode.mp3');
 if(this.cryurl){
 BattleSound.playEffect(this.cryurl);
 }
@@ -2238,7 +2238,7 @@ return;
 }
 this.updateStatbar(pokemon,false,true);
 this.scene.updateSidebar(pokemon.side);
-BattleSound.playEffect(seDir+'fainted.mp3');
+BattleSound.playEffect('se/'+'fainted.mp3');
 if(this.cryurl){
 BattleSound.playEffect(this.cryurl);
 }

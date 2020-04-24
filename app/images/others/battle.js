@@ -1559,7 +1559,7 @@ this.scene.runOtherAnim('bound',[poke]);
 break;}
 
 }else{
-BattleSound.playEffect(seDir+"hit.mp3");
+BattleSound.playEffect('se/'+"hit.mp3");
 var damageinfo=''+Pokemon.getFormattedRange(range,damage[1]===100?0:1,"\u2013");
 if(damage[1]!==100){
 var hover=''+(damage[0]<0?"\u2212":'')+
@@ -1800,7 +1800,7 @@ break;
 }
 case'-supereffective':{
 var _poke12=this.getPokemon(args[1]);
-BattleSound.playEffect(seDir+"super_effective.mp3");
+BattleSound.playEffect('se/'+"super_effective.mp3");
 if(_poke12){var _window$Config,_window$Config$server;
 this.scene.resultAnim(_poke12,'Super-effective','bad');
 if((_window$Config=window.Config)==null?void 0:(_window$Config$server=_window$Config.server)==null?void 0:_window$Config$server.afd){
@@ -1813,7 +1813,7 @@ break;
 }
 case'-resisted':{
 var _poke13=this.getPokemon(args[1]);
-BattleSound.playEffect(seDir+"not_very_effective.mp3");
+BattleSound.playEffect('se/'+"not_very_effective.mp3");
 if(_poke13)this.scene.resultAnim(_poke13,'Resisted','neutral');
 if(this.activeMoveIsSpread)kwArgs.spread='.';
 this.log(args,kwArgs);
@@ -3444,6 +3444,7 @@ this.scene.pause();
 };_proto3.
 play=function play(){
 var GameStart=18;
+var introDir="https://play.pokemonshowdown.com/fx/";
 if(this.activityStep==GameStart){
 for(var i=0;i<10;i++){
 this.scene.backgroundEffect("url('"+introDir+"ball1.png')",50,1.0);
